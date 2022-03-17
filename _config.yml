@@ -1,0 +1,6 @@
+url: "mispellingworlds.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+title: "Mispelling Worlds" # the name of your site, e.g. ACME Corp.
+description: "A blog about stuff I do, things I find interesting and basically whatever."
+
+sass:
+  sass_dir: /assets/css/
