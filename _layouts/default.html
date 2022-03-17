@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    {% include head.html %}
+
+    <title>{{ page.title }}</title>
   </head>
   <body>
+    <div  class="min-vh-100 min-wh-100">
+    {% include navbar.html %}
     {{ content }}
+
+    {% include foot-js.html %}
+    </div>
   </body>
 </html>
