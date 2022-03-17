@@ -6,3 +6,11 @@ $body-bg:                   $coolpink !default;
 
 $list-group-bg:                     null !default;
 
+.flexx {
+    //border: 1px solid #ac311c;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

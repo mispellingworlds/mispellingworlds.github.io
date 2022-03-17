@@ -1,5 +1,5 @@
-<div class="d-flex flex-column vh-10 justify-content-center align-items-center" style="height:30px; max-height:30px; display:inline-block;">
-<nav class="navbar navbar-default">
+<div class="d-flex flex-column vh-10 justify-content-center align-items-center flexx">
+<nav class="navbar navbar-default navbar-expand-md">
     <ul class="nav navbar-nav ml-auto list-group-horizontal list-group-flush">
         {% assign links = site.data.navigation %}
         {% for link in links %}
@@ -7,7 +7,7 @@
             {% if page.url contains link.url %}
                 {% assign class = 'active' %}
             {% endif %}
-        <li style="display:inline; margin-right:16px">
+        <li class="nav-item" style="display:inline; margin-right:16px">
             <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
         </li>
         {% endfor %}
