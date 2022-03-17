@@ -30,3 +30,10 @@ $list-group-bg:                     null !default;
 	display: flex;
 	flex-direction: column;
 }
+
+.letstry {
+  background-image: url('../images/home.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
