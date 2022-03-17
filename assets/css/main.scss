@@ -11,7 +11,8 @@
 @import "custom/variables";
 
 @import "bootstrap/functions";
-@import "bootstrap/variables";
+@import "bootstrap/functions";
+@import "bootstrap/vendors";
 @import "bootstrap/mixins";
 @import "bootstrap/root";
 @import "bootstrap/reboot";
