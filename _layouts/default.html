@@ -5,12 +5,16 @@
 
     <title>{{ page.title }}</title>
   </head>
-  <body>
-    <div class="flexx">
+  <body style="min-height: 100%;">
+    <div class="flexcontainer">
     {% include navbar.html %}
-    {{ content }}
-
+    
+    <div class="flexx-c" style="flex-grow:1">
+      {{ content }}
+    </div>
+    
     {% include foot-js.html %}
+    <div class="flexx-c">ziopera</div>
     </div>
   </body>
 </html>

@@ -6,11 +6,27 @@ $body-bg:                   $coolpink !default;
 
 $list-group-bg:                     null !default;
 
-.flexx {
+.flexx-c {
     //border: 1px solid #ac311c;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.flexx-r{
+    //border: 1px solid #321cac;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexcontainer {
+    //border: 1px solid #285a33;
+    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
