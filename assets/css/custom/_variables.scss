@@ -42,3 +42,13 @@ $list-group-bg:                     null !default;
     background-color: rgb(241, 216, 234);
     border: 2px solid black;
 }
+
+.text-width {
+    max-width: 50%;
+}
+
+@media screen and (min-width: 900px) {
+    #text-width{
+        max-width:85%;
+    } 
+}
