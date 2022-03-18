@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+
+    <title>{{ page.title }}</title>
+  </head>
+  <body style="min-height: 100%;">
+    <div class="flexcontainer">
+      {% include navbar.html %}
+
+      <div class="flexx-c" style="flex-grow:1;">
+        <div class="flexx-r" style="height:20px"></div>
+        <div class="flexx-r backdiv" style="flex-grow:2; width:90%">
+            <div style="flex-grow:2;" class="text-width">
+                <br>
+                    <h1 style="color:#4b2a6b">{{ page.title}}</h1>
+                    {{ content }}
+                <br></br>
+            </div>
+        </div>
+      </div>
+      
+      <div class="flexx-c" style="height:50px">
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="../../../assets/js/bootstrap.js"></script>
+  </body>
+</html>

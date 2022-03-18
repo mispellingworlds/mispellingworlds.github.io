@@ -3,4 +3,11 @@ title: "Posts"
 layout: "posts"
 ---
 
-Here's my posts.
+<ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <i style="font-size:78%; color:gray">{{ post.date| date: "%d %B %Y" }}</i>
+      </li>
+    {% endfor %}
+  </ul>
