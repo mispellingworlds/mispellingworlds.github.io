@@ -13,9 +13,14 @@
         {{ content }}
       </div>
       
-      {% include foot-js.html %}
-      <div class="flexx-c">
+      
+      <div class="flexx-c" style="height:130px">
+      {% for post in site.posts limit:1 %}
+        <b>Latest post: </b><a href="{{ post.url }}">{{ post.title }}</a> <i style="font-size:78%;">{{ post.date| date: "%d %B %Y" }}</i>
+      {% endfor %}
       </div>
+
     </div>
+    {% include foot-js.html %}
   </body>
 </html>
