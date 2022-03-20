@@ -3,4 +3,12 @@ title: "Mispelling Worlds"
 layout: default
 ---
 
-<img src="assets/images/logo3.png" style="max-width:100%; flex-basis:auto"></img>
+<div class="flexx-c">
+    <img src="assets/images/logo3.png" style="max-width:90%; flex-basis:auto"></img>
+</div>
+
+{% for post in site.posts limit:1 %}
+    <div class="flexx-c" style="height:100px; justify-content: end;">
+        <b>Latest post: </b><a href="{{ post.url }}">{{ post.title }}</a> <i style="font-size:78%;">{{ post.date| date: "%d %B %Y" }}</i>
+    </div>
+{% endfor %}
