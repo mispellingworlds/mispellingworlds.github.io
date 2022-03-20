@@ -14,7 +14,7 @@
       </div>
       
       
-      <div class="flexx-c" style="height:40%; justify-content:flex-start; flex-grow:1">
+      <div class="flexx-c" style="justify-content:flex-start; flex-grow:1">
       {% for post in site.posts limit:1 %}
         <b>Latest post: </b><a href="{{ post.url }}">{{ post.title }}</a> <i style="font-size:78%;">{{ post.date| date: "%d %B %Y" }}</i>
       {% endfor %}
