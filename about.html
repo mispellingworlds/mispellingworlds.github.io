@@ -7,3 +7,23 @@ Mispelling Worlds is a collection of thoughts and experiences which will get sha
 <br></br>
 Nicolae Munteanu <br>
 <i>mispellingworlds@protonmail.com</i>
+
+   
+<script>  
+    function getRandomImage() {  
+    var randomImage = new Array();  
+    randomImage[0] = "assets/images/aboutpg/1.png"
+    randomImage[1] = "assets/images/aboutpg/2.png"
+    randomImage[2] = "assets/images/aboutpg/3.png"
+    randomImage[3] = "assets/images/aboutpg/4.png"
+    randomImage[4] = "assets/images/aboutpg/5.png"
+
+    var number = Math.floor(Math.random()*randomImage.length);  
+    document.write('<img src="'+randomImage[number]+'" style="margin:auto; max-width:30%" />'); document.close(); 
+    }
+
+</script>
+
+<div style="display:flex; justify-content:center; padding-top:5%">
+    <script>getRandomImage();</script>
+</div>
