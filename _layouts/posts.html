@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     {% include head.html %}
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
 
     <title>{{ page.title }}</title>
   </head>
@@ -13,7 +17,7 @@
       <div class="flexx-c" style="flex-grow:1;">
         <div class="flexx-r" style="height:20px"></div>
         <div class="flexx-r backdiv" style="flex-grow:2; width:90%">
-            <div style="flex-grow:2;" class="text-width textspacing">
+            <div style="flex-grow:2; font-family:'Nunito', sans-serif; padding-top:2%" class="text-width textspacing">
                 <br>
                 {{ content }}
                 <br></br>
