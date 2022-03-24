@@ -9,7 +9,7 @@ So, it's saturday night and I can't remember the last time I've been there. Over
 
 
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
-    <img src="/assets/images/1/twitch.jpg" class="imgBorder" style="margin:auto; max-width:90%" alt="Outside Pic">
+    <img src="/assets/images/1/twitch.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="Outside Pic">
 </div>
 
 Basically there's a Twitch streamer that has set up his studio in the beating heart of San Salvario, a small and completely visible room in which he records himself talking or playing for his audience. He got famous when, during a weekend night, a group of people started harassing him while he was streaming, only for them to take it too far and break the display window that separates his studio from the street. This whole story seemed very surreal to me at the moment - but it got even weirder when we got in front of his studio.
@@ -18,9 +18,9 @@ Of course, this was all intentional. After a quick search I found out that he st
 
 
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
-    <img src="/assets/images/1/inside.jpg" class="imgBorder" style="margin:auto; max-width:90%" alt="Inside Pic">
+    <img src="/assets/images/1/inside.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="Inside Pic">
 </div>
 
 Knowing you could become famous for a couple of seconds is exciting, and your chances are even higher when you do stupid stuff. That's why there's a good bunch of people waiting in line to get in and have their moment of exhibitionism, between one drink and the other. An inoffensive looking bodyguard stands near the windowed door of the studio, saying that the streamer is just working and that nobody should even enter. Everybody knows that's not how things really are, though. 
-Another thing I found strange is that a place like this exists in an area that I had always thought of as extremely chaotic, full and everflowing. His room is decorated with just a computer, some screens and other technological devices; it felt paradoxical near the constant flux of people that surely do not have delicacy on top of their priorities. It all made mee feel like he was <i>encaged</i> in there.<br>
+Another thing I found strange is that a place like this exists in an area that I had always thought of as extremely chaotic, full and everflowing. His room is decorated with just a computer, some screens and other technological devices; it felt paradoxical near the constant flux of people that surely do not have delicacy on top of their priorities. It all made me feel like he was <i>encaged</i> in there.<br>
 Me and my friends soon realize that, since we're standing in the view of the camera, we're in some part of the stream too, we're in the exhibition. I kept thinking about it even after we all moved away. The fact that something like this can happen is very interesting and it's one of the things that concretely reminds me that, well, it's 2022: entertainment got really, really strange; the real world is increasingly mixed up with the online world; and you could get on the screen of hundreds of people just by walking on the street. 
