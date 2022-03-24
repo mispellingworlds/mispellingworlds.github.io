@@ -7,7 +7,7 @@ $body-bg:                   $coolpink !default;
 $list-group-bg:                     null !default;
 
 .flexx-c {
-    //border: 1px solid #ac311c;
+    border: 1px solid #ac311c;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -16,7 +16,7 @@ $list-group-bg:                     null !default;
 }
 
 .flexx-r{
-    //border: 1px solid #321cac;
+    border: 1px solid #321cac;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
