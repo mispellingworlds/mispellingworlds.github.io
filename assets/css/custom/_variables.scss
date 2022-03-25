@@ -51,14 +51,17 @@ $list-group-bg:                     null !default;
     } 
 
     .logo-padding{
-        padding-bottom: 46%;
-        padding-top: 46%;
-        max-width:95%; 
+        padding-bottom: 48%;
+        padding-top: 48%;
     }
 
     .img-about{
         margin:auto; 
         max-width:50%
+    }
+
+    .logo-width{
+        max-width:95%;
     }
 }
 
@@ -69,12 +72,15 @@ $list-group-bg:                     null !default;
 
     .logo-padding{
         padding:3%;
-        max-width:90%; 
     }
 
     .img-about{
         margin:auto; 
-        max-width:25%
+        max-width:25%;
+    }
+
+    .logo-width{
+        max-width:90%;
     }
 }
 
