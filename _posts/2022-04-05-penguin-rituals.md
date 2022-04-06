@@ -43,7 +43,4 @@ Some takeaways from my experience:
         I had so many ideas for this game, and so many of them were good! But I just let it take its own shape, because in the end you can't know what will work and what won't in advance. I wanted there to be multiple endings, a global timer, a way to choose between good and evil playthroughs, a more grim story. I wanted it to be about a sort of <a href="https://en.wikipedia.org/wiki/Cargo_cult"><u>cargo cult</u></a>, which I still find an amazing idea, but it didn't fit the mood that was building up.<br><br>
     <li><h5 ><b style="color:#4b2a6b">Going away for a while is refreshing</b></h5></li>
         Pretty self explanatory. It's nice to just leave everything else on pause and to focus on developing and creating, more intensely than usual. 
-        <div style="display:flex; justify-content:left; padding-bottom: 20px;">
-            <img src="/assets/images/4/penguinhappy.png" style="max-width:100%" alt="Happy Penguin">
-        </div>
 </ul>
