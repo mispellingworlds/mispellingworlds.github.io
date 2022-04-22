@@ -63,6 +63,14 @@ $list-group-bg:                     null !default;
     .logo-width{
         max-width:95%;
     }
+
+    .img-mobile{
+        display:block;
+    }
+
+    .img-desktop{
+        display:none;
+    }
 }
 
 @media screen and (min-width: 767px) {
@@ -81,6 +89,14 @@ $list-group-bg:                     null !default;
 
     .logo-width{
         max-width:90%;
+    }
+
+    .img-mobile{
+        display:none;
+    }
+
+    .img-desktop{
+        display:block;
     }
 }
 
