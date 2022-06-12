@@ -9,10 +9,10 @@ date: "2022-04-05"
     <img src="/assets/images/4/ss.png" class="imgBorder" style="margin:auto; max-width:100%" alt="Title Screen of the Game">
 </div>
 
-The last few days have been crazy. <a href="https://en.wikipedia.org/wiki/Ludum_Dare">Ludum Dare</a> is a great excuse to put everything else on hold and, for a couple of days, concentrate on <i>one</i> particular goal: making a game & sharing it with others. Part of why it's so intense is that everything happens quickly, the decisions, the programming, the testing; the outside world kinda stops existing for a while. The thing is: when it all ends, it's so, so satisfying. You have a finished packaged experience in your hands, and you actively contributed to it creation. 
+The last few days have been crazy. <a href="https://en.wikipedia.org/wiki/Ludum_Dare" class="redlink">Ludum Dare</a> is a great excuse to put everything else on hold and, for a couple of days, concentrate on <i>one</i> particular goal: making a game & sharing it with others. Part of why it's so intense is that everything happens quickly, the decisions, the programming, the testing; the outside world kinda stops existing for a while. The thing is: when it all ends, it's so, so satisfying. You have a finished packaged experience in your hands, and you actively contributed to it creation. 
 <br>
 <br>
-This time around I am really happy with the output. I had some friends team up with me and they helped me along the way, so I only had to do the coding, the art and the story. Having someone take care of the audio and music saved me a lot of time, and their contribution was amazing too! <a href="https://mmisspelling.itch.io/penguin-rituals"><u>Here's a link</u></a> if you want to check the game out and <a href="https://ldjam.com/events/ludum-dare/50/penguin-rituals"><u>here</u></a>'s the Ludum Dare page.
+This time around I am really happy with the output. I had some friends team up with me and they helped me along the way, so I only had to do the coding, the art and the story. Having someone take care of the audio and music saved me a lot of time, and their contribution was amazing too! <a href="https://mmisspelling.itch.io/penguin-rituals" class="redlink">Here's a link</a> if you want to check the game out and <a href="https://ldjam.com/events/ludum-dare/50/penguin-rituals" class="redlink">here</a>'s the Ludum Dare page.
 <br><br>
 Some takeaways from my experience:
 
@@ -40,7 +40,7 @@ Some takeaways from my experience:
             <img src="/assets/images/4/1.png" class="imgBorder" style="margin:auto; max-width:100%" alt="Screenshot">
         </div>
     <li><h5 ><b style="color:#4b2a6b">Stuff gets made along the way</b></h5></li>
-        I had so many ideas for this game, and so many of them were good! But I just let it take its own shape, because in the end you can't know what will work and what won't in advance. I wanted there to be multiple endings, a global timer, a way to choose between good and evil playthroughs, a more grim story. I wanted it to be about a sort of <a href="https://en.wikipedia.org/wiki/Cargo_cult"><u>cargo cult</u></a>, which I still find an amazing idea, but it didn't fit the mood that was building up.<br><br>
+        I had so many ideas for this game, and so many of them were good! But I just let it take its own shape, because in the end you can't know what will work and what won't in advance. I wanted there to be multiple endings, a global timer, a way to choose between good and evil playthroughs, a more grim story. I wanted it to be about a sort of <a href="https://en.wikipedia.org/wiki/Cargo_cult" class="redlink">cargo cult</a>, which I still find an amazing idea, but it didn't fit the mood that was building up.<br><br>
     <li><h5 ><b style="color:#4b2a6b">Going away for a while is refreshing</b></h5></li>
         Pretty self explanatory. It's nice to just leave everything else on pause and to focus on developing and creating, more intensely than usual. 
 </ul>
