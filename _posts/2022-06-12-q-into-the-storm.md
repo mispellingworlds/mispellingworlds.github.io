@@ -1,5 +1,5 @@
 ---
-title:  "Into the Storm of <i>Q: Into the Storm</i>. "
+title:  "Into the Storm of <i>Q: Into the Storm</i>"
 layout: "blogpost"
 date: "2022-06-12"
 ---
