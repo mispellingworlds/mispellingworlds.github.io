@@ -62,7 +62,7 @@ Living with architecture students had the nice effect of making me notice more o
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/9.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="feup">
 </div>
-FEUP is where I studied at and it's where all the classes and labs happened. Best moment was making a project in Haskell - a game about two octopuses fighting eachother for space - and, during the presentation to the professor, continuosly mistaking "tentacles" for "testicles".
+FEUP is where I studied at and it's where all the classes and labs happened. Best moment was making a project in Haskell - a game about two octopuses fighting eachother for space - and, during the presentation to the professor, continuosly mistaking the word "tentacles" for "testicles".
 <br>
 <br>
 <br>
@@ -70,7 +70,7 @@ FEUP is where I studied at and it's where all the classes and labs happened. Bes
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/10.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="cape">
 </div>
-FEUP students can choose whether to become part of a students association and wear traditional suits and cloaks, participate in games, perform tasks, rank up and so on, videogame style. Those who do will wear those clothes even in the hot summer days, and even when not in university; some of them bring heavy wooden tools(?) with them on their shoulder, some will be found playing traditional music in bars over the city. It's pretty interesting when you go down the rabbithole, but it can definitely appear creepy at first.
+FEUP students can choose whether to become part of a students association and wear traditional suits and cloaks, participate in games, perform tasks, rank up and so on, videogame style. Those who do will wear those clothes even in the hot summer days, and even when not in university; some of them bring heavy wooden tools(?) with them on their shoulder, some will be found playing traditional music in bars over the city. It's pretty interesting when you go down the rabbithole, but it can appear creepy at first.
 <br>
 <br>
 <br>
@@ -86,7 +86,7 @@ I really wanted to go to the botanical garden for a lot of time, after finding i
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/12.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="superbock">
 </div>
-Porto is obsessed with its beer: Super Bock. You'll see it everywhere, bars have the super bock logo on everything, on their tables, chairs, umbrellas; every restaurant has it, there's ads for it everywhere, they even gave us Super Bocks on the welcoming day in our university. In my favourite park, <i>Jardins do Palácio de Cristal</i>, there's an enormous building in the middle, the Super Bock Arena. I always found it funny for some reason. As for the Super Bock beer itself? I love it, it's extremely drinkable and has a nice light taste.
+Porto is obsessed with its beer: Super Bock. You'll see it everywhere, bars have the Super Bock logo on everything, on their tables, chairs, umbrellas; every restaurant has it, there's ads for it everywhere, they even gave us Super Bocks on the welcoming day in our university. In my favourite park, <i>Jardins do Palácio de Cristal</i>, there's an enormous building in the middle, the Super Bock Arena. I always found it funny for some reason. As for the Super Bock beer itself? I love it, it's extremely drinkable and has a nice light taste.
 <br>
 <br>
 <br>
