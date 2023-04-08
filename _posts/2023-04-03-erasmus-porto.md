@@ -78,7 +78,7 @@ University students can choose whether to become part of a students association 
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/11.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="botanicalgarden">
 </div>
-I really wanted to go to the botanical garden for a lot of time, after finding it as an attraction on <a href="https://www.atlasobscura.com/things-to-do/porto-portugal">Atlas Obscura</a>. When I finally had time to go there, after the exams ended, it was winter and most of the plants were in very bad condition. Not the cacti I guess.
+I really wanted to go to the botanical garden for a lot of time, after finding it as an attraction on <a href="https://www.atlasobscura.com/things-to-do/porto-portugal">Atlas Obscura</a>. When I finally had time to go there, after the exams ended, it was winter and most of the plants were in very bad condition. Not the cacti though.
 <br>
 <br>
 <br>
