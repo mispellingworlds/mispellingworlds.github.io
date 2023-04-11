@@ -8,21 +8,23 @@ date: "2023-04-03"
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/1.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="kitchen">
 </div>
-Our humble kitchen+living room is where most of our guests stayed. It got reimagined near the end of my stay, since one of the fridges was broken and just stood there, taking up space; we decided to defenestrate it (okay, not really - it just went through the door) and leave it in our terrace. The metal chicken on top of that fridge was empty and we decided to fill it up with wine corks. We only got just close, but our successors will definitely manage to finish the job.
+Our humble kitchen+living room is where most of our guests stayed. It got reimagined near the end of my stay, since one of the fridges was broken and just stood there, taking up space; we decided to defenestrate it (okay, not really, it simply went through the door) and leave it outside in our terrace. 
+
+The metal chicken on top of that fridge was empty and we decided to fill it up with wine corks. We only got just close, but our successors will definitely manage to finish the job.
 <br>
 <br>
 <br>
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/2.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="bedroom">
 </div>
-My room was really messy most of the time. I used to think that making the bed was just a waste of time, since you'll just eventually get into it again, but yeah as it turns out it's a great way to create a more focused environment and be more prone to getting shit done. I also bought that whiteboard near the mirror to plan my days, and now I can't live without it.
+My room was really messy most of the time. I used to think that making the bed was just a waste of time, since you'll very soon get into it again, but as it turns out it's a great way to create a more focused environment and get more in the mindset of getting shit done. I also bought that whiteboard near the mirror to plan my days, and now I can't live without it.
 <br>
 <br>
 <br>
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/3.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="terrace">
 </div>
-The best part of the house. If it didn't rain <i>soooo</i> often I would have spent all of my time on this terrace.
+The terrace, the best part of the house. If it didn't rain <i>soooo</i> often I would have spent all of my time there.
 <br>
 <br>
 <br>
@@ -86,7 +88,7 @@ I really wanted to go to the botanical garden for a lot of time, after finding i
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
     <img src="/assets/images/porto/12.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="superbock">
 </div>
-Porto is obsessed with its beer: Super Bock. You'll see it everywhere, bars have the Super Bock logo on everything, on their tables, chairs, umbrellas; every restaurant has it, there's ads for it everywhere, they even gave us Super Bocks on the welcoming day in university. In my favourite park, <i>Jardins do Palácio de Cristal</i>, there's an enormous building in the middle, which is called the Super Bock Arena. I always found it funny for some reason. As for the Super Bock beer itself? I love it, it's extremely drinkable and has a nice light taste.
+Porto is obsessed with its beer: Super Bock. You'll see it everywhere, bars have the Super Bock logo on everything, on their tables, chairs, umbrellas; every restaurant has it, there's ads for it everywhere, they even gave us Super Bocks on the welcoming day in university. In my favourite park, <i>Jardins do Palácio de Cristal</i>, there's an enormous building in the middle - the <b>SUPER BOCK ARENA</b>. I always found it funny for some reason. As for the Super Bock beer itself? I love it, it's extremely drinkable and has a nice light taste.
 <br>
 <br>
 <br>
