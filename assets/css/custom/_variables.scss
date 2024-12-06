@@ -1,7 +1,7 @@
-$primary: #262626;
+$primary: #030303;
 
-$coolblack: #0a0a0a;
-$coollink: #808080;
+$coolblack: #030303;
+$coollink: #acacac;
 
 $body-bg:                   $coolblack !default;
 
@@ -51,7 +51,7 @@ $graycolor: #adadad;
 }
 
 .backdiv {
-    background-color: rgb(124, 124, 124);
+    background-color: rgb(15, 15, 15);
     border: 2px solid black;
 }
 
@@ -100,7 +100,7 @@ $graycolor: #adadad;
     }
 
     .logo-width{
-        max-width:40%;
+        max-width:30%;
     }
 
     .img-mobile{
@@ -124,5 +124,9 @@ $graycolor: #adadad;
 }
 
 h3 {
-    color: #161616;
+    color: #d3d3d3;
+}
+
+p {
+    color:rgb(146, 146, 146)
 }

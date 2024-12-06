@@ -6,8 +6,8 @@ layout: "posts"
 <ul>
     {% for post in site.posts %}
       <li>
-        <a href="{{ post.url }}" style="color:#1a1a1a">{{ post.title }}</a>
-        <i style="font-size:78%; color:gray">{{ post.date| date: "%d %B %Y" }}</i>
+        <a href="{{ post.url }}" style="color:#000000">{{ post.title }}</a>
+        <i style="font-size:78%; color:rgb(36, 36, 36)">{{ post.date| date: "%d %B %Y" }}</i>
       </li>
     {% endfor %}
   </ul>
