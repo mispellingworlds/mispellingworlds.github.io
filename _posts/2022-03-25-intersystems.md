@@ -5,11 +5,11 @@ date: "2022-03-25"
 ---
 
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
-    <img src="/assets/images/3/freeposter.jpg" class="imgBorder" style="margin:auto; max-width:60%" alt="Album Cover">
+    <img src="/assets/images/3/freeposter.jpg" class="imgBorder" style="margin:auto; max-width:100%" alt="Album Cover">
 </div>
 
 <div style="display:flex; justify-content:center; padding-bottom: 20px;">
-    <img src="/assets/images/3/psychedelicposter.jpeg" class="imgBorder" style="margin:auto; max-width:60%" alt="Psychedelic Poster">
+    <img src="/assets/images/3/psychedelicposter.jpeg" class="imgBorder" style="margin:auto; max-width:100%" alt="Psychedelic Poster">
 </div>
 
 <h3>1. Mirror Maze</h3>
