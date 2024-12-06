@@ -2,21 +2,18 @@
 <html lang="en">
   <head>
     {% include head.html %}
-
     <title>{{ page.title }}</title>
   </head>
 
   <body style="min-height: 100%;">
     <div class="flexcontainer">
       {% include navbar.html %}
-
       <div class="flexx-c" style="flex-grow:1;">
         <div class="flexx-r" style="height:20px"></div>
         <div class="flexx-r backdiv" style="flex-grow:2; width:90%">
             <div style="flex-grow:2; font-family: sans-serif; padding-top:2%" class="text-width textspacing">
-                <br>
                 {{ content }}
-                <br></br>
+                <br>
             </div>
         </div>
       </div>
