@@ -16,7 +16,7 @@
       
       <div class="flexx-c grayy" style="justify-content:flex-start; flex-grow:1">
       {% for post in site.posts limit:1 %}
-        <b>Latest post: </b><a href="{{ post.url }}" class="grayy" style="text-align:center; max-width:83%">{{ post.title }}</a> <i style="font-size:78%;">{{ post.date| date: "%d %B %Y" }}</i>
+        <b>Latest post: </b><a href="{{ post.url }}" class="grayy" style="text-align:center; max: width 83%; color:#adadad" ">{{ post.title }}</a> <i style="font-size:78%;">{{ post.date| date: "%d %B %Y" }}</i>
       {% endfor %}
       </div>
 
