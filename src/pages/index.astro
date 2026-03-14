@@ -59,12 +59,21 @@ import FluidText from '../fluidText.astro';
     /* TRUCCO: forza l'immagine a coprire tutta la larghezza 
        anche se deve deformarsi leggermente per l'altezza */
     width: 100%;
-    height: 50%;
     object-fit: fill; /* "Stretch" invece di "contain" */
+  }
+
+  /* Desktop: Immagine più schiacciata (es. 30% dell'altezza rimanente) */
+  @media (min-width: 769px) {
+    .image-section img {
+      height: 65%; 
+    }
   }
 
   /* Se su mobile il testo è troppo, puoi regolare il padding */
   @media (max-width: 768px) {
+    .image-section img {
+      height: 40%; 
+    }
     .text-section { padding: 0 0; }
   }
 </style>
