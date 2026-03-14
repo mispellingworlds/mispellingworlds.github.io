@@ -42,13 +42,14 @@ const letters = text.split("");
   }
   .char {
     display: inline-block;
+    cursor: pointer;
     user-select: none;
     will-change: color;
   }
 </style>
 
 <script>
-  const palette = ['#787878', '#878787', '#424242', '#ababab', '#242424', '#ededed', '#1c1c1c'];
+  const palette = ['#787878', '#878787', '#424242', '#ababab', '#dbdbdb'];
   let resizeTimeout: number;
   
   function handleLetterClick(event: MouseEvent) {
