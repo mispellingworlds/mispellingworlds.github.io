@@ -17,7 +17,7 @@ import FluidText from '../fluidText.astro';
     </div>
 
     <div class="image-section">
-      <img src="/scribbles_horizontal_bg.webp" alt="" />
+      <img src="/patterns_homescreen.webp" alt="" />
     </div>
    
 
@@ -49,23 +49,22 @@ import FluidText from '../fluidText.astro';
     box-sizing: border-box;
   }
 
-  .image-section {
-    /* L'immagine occupa tutto lo spazio rimanente sotto */
+ .image-section {
     flex: 1;
     display: flex;
-    align-items: left;
-    justify-content: left;
-    min-height: 0; /* Fondamentale per il resize in flex */
+    min-height: 0;
   }
 
-  .image-section img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+.image-section img {
+    /* TRUCCO: forza l'immagine a coprire tutta la larghezza 
+       anche se deve deformarsi leggermente per l'altezza */
+    width: 100%;
+    height: 50%;
+    object-fit: fill; /* "Stretch" invece di "contain" */
   }
 
   /* Se su mobile il testo è troppo, puoi regolare il padding */
   @media (max-width: 768px) {
-    .text-section { padding: 2rem 1rem; }
+    .text-section { padding: 0 0; }
   }
 </style>
