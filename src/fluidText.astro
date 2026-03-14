@@ -1,0 +1,109 @@
+---
+interface Props {
+  text: string;
+  tag?: 'h1' | 'h2' | 'h3' | 'div' | 'p';
+}
+
+const { text, tag: Tag = 'div' } = Astro.props;
+const letters = text.split("");
+---
+
+<div class="fluid-container">
+  <Tag class="fluid-target">
+    {letters.map((char: string) => (
+      <span class="char">{char === " " ? "\u00A0" : char}</span>
+    ))}
+  </Tag>
+</div>
+
+<style>
+  .fluid-container {
+    contain: layout paint;
+    width: 100%;
+    display: block;
+    overflow: visible;
+    /* Riduciamo il padding al minimo tecnico */
+    padding: 0; 
+    line-height: 1;
+  }
+  .fluid-target {
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    line-height: 1;
+    font-family: 'Nohemi-Medium', sans-serif;
+    /* Transizione rapida per un'apparizione pulita */
+    margin: 0;
+  }
+  .fluid-target.is-ready {
+    opacity: 1;
+    visibility: visible;
+  }
+  .char {
+    display: inline-block;
+    user-select: none;
+    pointer-events: auto;
+    will-change: color;
+  }
+</style>
+
+<script>
+  const palette = ['#787878', '#878787', '#424242', '#ababab', '#242424', '#ededed', '#1c1c1c'];
+  
+  function handleLetterClick(event: MouseEvent) {
+    const el = event.target as HTMLElement;
+    if (el?.classList.contains('char')) {
+      el.style.color = palette[Math.floor(Math.random() * palette.length)];
+    }
+  }
+
+  function scaleElement(container: HTMLElement) {
+    const target = container.querySelector('.fluid-target') as HTMLElement;
+    if (!target) return;
+
+    // TRUCCO INGEGNERISTICO:
+    // Lo rendiamo invisibile e fuori dal flusso per misurarlo senza creare spazio bianco
+    const originalPosition = target.style.position;
+    target.style.position = 'absolute';
+    target.style.fontSize = '100px';
+    
+    // Calcoliamo la larghezza del container (che rimane fissa) e del testo (in absolute)
+    const containerWidth = container.clientWidth;
+    const textWidth = target.offsetWidth;
+    
+    if (textWidth > 0) {
+      const ratio = containerWidth / textWidth;
+      // Applichiamo il font size finale e ripristiniamo la posizione
+      target.style.fontSize = `${100 * ratio}px`;
+      target.style.position = originalPosition;
+      
+      // Un piccolo delay tramite frame per assicurarci che il paint sia pronto
+      requestAnimationFrame(() => {
+        target.classList.add('is-ready');
+      });
+    }
+  }
+
+  function setup() {
+    document.querySelectorAll('.fluid-container').forEach(c => scaleElement(c as HTMLElement));
+    document.removeEventListener('click', handleLetterClick);
+    document.addEventListener('click', handleLetterClick);
+  }
+
+  // Gestione caricamento
+  document.addEventListener('astro:page-load', setup);
+  
+  // Font ready è il trigger più sicuro per evitare whitespace o tagli
+  if ("fonts" in document) {
+    document.fonts.ready.then(setup);
+  } else {
+    window.addEventListener('load', setup);
+  }
+
+  window.addEventListener('resize', () => {
+    // Rimuoviamo is-ready per evitare glitch visivi durante il resize
+    document.querySelectorAll('.fluid-target').forEach(t => t.classList.remove('is-ready'));
+    setup();
+  });
+</script>
