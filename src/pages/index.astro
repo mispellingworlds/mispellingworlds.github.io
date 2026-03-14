@@ -17,7 +17,7 @@ import FluidText from '../fluidText.astro';
     </div>
 
     <div class="image-section">
-      <img src="/patterns_homescreen2.webp" alt="chapu" />
+      <img src="/xeroxed_pic.webp" alt="chapu" />
     </div>
    
 
@@ -55,27 +55,28 @@ import FluidText from '../fluidText.astro';
  .image-section {
     flex: 1;
     display: flex;
-    min-height: 0;
+    align-items: left;
+    justify-content: left;
+    padding-top: 2%;
   }
 
 .image-section img {
     /* TRUCCO: forza l'immagine a coprire tutta la larghezza 
        anche se deve deformarsi leggermente per l'altezza */
-    width: 100%;
-    object-fit: fill; /* "Stretch" invece di "contain" */
+    object-fit: contain; /* "Stretch" invece di "contain" */
   }
 
   /* Desktop: Immagine più schiacciata (es. 30% dell'altezza rimanente) */
   @media (min-width: 769px) {
     .image-section img {
-      height: 50%; 
+      height: 70%; 
     }
   }
 
   /* Se su mobile il testo è troppo, puoi regolare il padding */
   @media (max-width: 768px) {
     .image-section img {
-      height: 15%; 
+      width: 100%; 
     }
   }
 </style>
