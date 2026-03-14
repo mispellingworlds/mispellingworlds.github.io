@@ -69,7 +69,8 @@ import FluidText from '../fluidText.astro';
   /* Desktop: Immagine più schiacciata (es. 30% dell'altezza rimanente) */
   @media (min-width: 769px) {
     .image-section img {
-      height: 70%; 
+      height: 60%; 
+      padding-left: 2%;
     }
   }
 
@@ -77,6 +78,8 @@ import FluidText from '../fluidText.astro';
   @media (max-width: 768px) {
     .image-section img {
       width: 100%; 
+      align-items: center;
+
     }
   }
 </style>
