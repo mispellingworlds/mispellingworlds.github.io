@@ -1,24 +1,17 @@
 ---
+import Layout from '../layouts/BaseLayout.astro';
 import FluidText from '../fluidText.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link 
-			rel="preload" 
-			href="/fonts/Nohemi-Medium.woff2" 
-			as="font" 
-			type="font/woff2" 
-			crossorigin="anonymous"
-		>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>mispellingworlds</title>
-	</head>
-	<body>
-		<FluidText text="hopersotantotempoquindimifacciospazio" tag="h1" />
-	</body>
-</html>
+<Layout title="mispellingworlds">
+  <main style="padding: 1rem; width: 100%;">
+    <div class="desktop-only">
+      <FluidText text="hopersotantotempoquindimifacciospazio" tag="h1" />
+    </div>
+    
+    <div class="mobile-only">
+      <FluidText text="hopersotantotempo" tag="h1" />
+      <FluidText text="quindimifacciospazio" tag="h1" />
+    </div>
+  </main>
+</Layout>

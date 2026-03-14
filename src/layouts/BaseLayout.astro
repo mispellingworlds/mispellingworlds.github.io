@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="color-scheme" content="only light">
+    <title>{title}</title>
+
+    <link rel="preload" href="/fonts/Nohemi-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <style is:global>
+      @font-face {
+        font-family: 'Nohemi-Medium';
+        src: url('/fonts/Nohemi-Medium.woff2') format('woff2');
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root { color-scheme: light; }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #ffffff !important;
+        font-family: 'Nohemi-Medium', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        forced-color-adjust: none;
+      }
+
+      * { box-sizing: border-box; }
+
+      /* UTILITY CLASSES GLOBALI */
+      .mobile-only {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .desktop-only {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        .mobile-only { display: none; }
+        .desktop-only { display: block; }
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

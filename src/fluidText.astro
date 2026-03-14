@@ -18,23 +18,23 @@ const letters = text.split("");
 
 <style>
   .fluid-container {
-    contain: layout paint;
     width: 100%;
     display: block;
-    overflow: visible;
-    /* Riduciamo il padding al minimo tecnico */
-    padding: 0; 
+    overflow: hidden; /* Evita tagli visivi a destra */
     line-height: 1;
+    padding: 0;
   }
   .fluid-target {
     display: inline-block;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    line-height: 1;
+    line-height: 1.1;
     font-family: 'Nohemi-Medium', sans-serif;
-    /* Transizione rapida per un'apparizione pulita */
     margin: 0;
+    /* Transizione rapida per nascondere il ricalcolo al resize */
+    transition: opacity 0.05s ease-in;
+    transform-origin: left center;
   }
   .fluid-target.is-ready {
     opacity: 1;
@@ -43,13 +43,13 @@ const letters = text.split("");
   .char {
     display: inline-block;
     user-select: none;
-    pointer-events: auto;
     will-change: color;
   }
 </style>
 
 <script>
   const palette = ['#787878', '#878787', '#424242', '#ababab', '#242424', '#ededed', '#1c1c1c'];
+  let resizeTimeout: number;
   
   function handleLetterClick(event: MouseEvent) {
     const el = event.target as HTMLElement;
@@ -62,48 +62,50 @@ const letters = text.split("");
     const target = container.querySelector('.fluid-target') as HTMLElement;
     if (!target) return;
 
-    // TRUCCO INGEGNERISTICO:
-    // Lo rendiamo invisibile e fuori dal flusso per misurarlo senza creare spazio bianco
-    const originalPosition = target.style.position;
-    target.style.position = 'absolute';
-    target.style.fontSize = '100px';
+    // Se l'elemento è nascosto (display: none), resettiamo e usciamo
+    if (container.offsetWidth === 0) {
+      target.classList.remove('is-ready');
+      return;
+    }
+
+    // Misurazione senza cambiare position (evita bug sui click)
+    target.style.fontSize = '10px'; 
     
-    // Calcoliamo la larghezza del container (che rimane fissa) e del testo (in absolute)
-    const containerWidth = container.clientWidth;
-    const textWidth = target.offsetWidth;
+    // getBoundingClientRect è fondamentale per i sub-pixel (evita il testo tagliato)
+    const containerWidth = container.getBoundingClientRect().width;
+    const textWidth = target.getBoundingClientRect().width;
     
     if (textWidth > 0) {
-      const ratio = containerWidth / textWidth;
-      // Applichiamo il font size finale e ripristiniamo la posizione
-      target.style.fontSize = `${100 * ratio}px`;
-      target.style.position = originalPosition;
+      // Moltiplicatore 0.99 per sicurezza contro gli arrotondamenti dei browser
+      const ratio = (containerWidth / textWidth) * 1;
+      target.style.fontSize = `${10 * ratio}px`;
       
-      // Un piccolo delay tramite frame per assicurarci che il paint sia pronto
-      requestAnimationFrame(() => {
-        target.classList.add('is-ready');
-      });
+      // Forza il rendering prima di mostrare
+      void target.offsetWidth;
+      target.classList.add('is-ready');
     }
   }
 
   function setup() {
     document.querySelectorAll('.fluid-container').forEach(c => scaleElement(c as HTMLElement));
-    document.removeEventListener('click', handleLetterClick);
-    document.addEventListener('click', handleLetterClick);
   }
 
-  // Gestione caricamento
+  // Event Listeners
+  document.addEventListener('click', handleLetterClick);
   document.addEventListener('astro:page-load', setup);
   
-  // Font ready è il trigger più sicuro per evitare whitespace o tagli
   if ("fonts" in document) {
     document.fonts.ready.then(setup);
-  } else {
-    window.addEventListener('load', setup);
   }
 
   window.addEventListener('resize', () => {
-    // Rimuoviamo is-ready per evitare glitch visivi durante il resize
+    // Nascondiamo il testo durante il resize per evitare l'effetto "tagliato"
     document.querySelectorAll('.fluid-target').forEach(t => t.classList.remove('is-ready'));
-    setup();
+    
+    clearTimeout(resizeTimeout);
+    resizeTimeout = window.setTimeout(setup, 50); // Piccolo debounce per stabilità
   });
+
+  // Init
+  setup();
 </script>
