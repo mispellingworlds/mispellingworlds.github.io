@@ -2,6 +2,7 @@
 import Layout from '../layouts/BaseLayout.astro';
 import FluidText from '../fluidText.astro';
 ---
+
 <Layout title="mispellingworlds">
   <div class="master-stack">
     
@@ -15,15 +16,8 @@ import FluidText from '../fluidText.astro';
       </div>
     </div>
 
-    <div class="desktop-only">
-      <div class="image-section">
-        <img src="/scribbles_horizontal_bg.webp" alt="" />
-      </div>
-    </div>
-    <div class="mobile-only">
-      <div class="image-section">
-        <img src="/plus.png" alt="" />
-      </div>
+    <div class="image-section">
+      <img src="/scribbles_horizontal_bg.webp" alt="" />
     </div>
    
 
@@ -35,6 +29,7 @@ import FluidText from '../fluidText.astro';
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
     background-color: white;
   }
@@ -43,34 +38,34 @@ import FluidText from '../fluidText.astro';
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
   }
 
   .text-section {
+    /* Il testo occupa la parte superiore. 
+       Dandogli larghezza 100%, FluidText tornerà grande. */
     width: 100%;
-    flex: 0 0 auto; /* Prende solo lo spazio strettamente necessario */
-    padding: 0 0 0 0; /* Rimosso padding inferiore */
+    flex: 0 0 auto; 
     box-sizing: border-box;
   }
 
   .image-section {
-    flex: 1; /* Occupa tutto lo spazio rimasto */
+    /* L'immagine occupa tutto lo spazio rimanente sotto */
+    flex: 1;
     display: flex;
-    align-items: flex-start; /* Attacca l'immagine in alto, subito dopo il testo */
-    justify-content: flex-start; /* Allinea a sinistra come nello screenshot */
-    overflow: hidden;
+    align-items: left;
+    justify-content: left;
+    min-height: 0; /* Fondamentale per il resize in flex */
   }
 
   .image-section img {
-    height: 100%; /* L'immagine scala per riempire l'altezza rimanente */
-    width: auto;
+    max-height: 100%;
+    max-width: 100%;
     object-fit: contain;
   }
 
-  /* Rimuovi eventuali margini dai tag h1 generati da FluidText */
-  h1 {
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 0.9; /* Stringe ulteriormente lo spazio tra le righe */
+  /* Se su mobile il testo è troppo, puoi regolare il padding */
+  @media (max-width: 768px) {
+    .text-section { padding: 2rem 1rem; }
   }
 </style>
