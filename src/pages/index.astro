@@ -4,14 +4,67 @@ import FluidText from '../fluidText.astro';
 ---
 
 <Layout title="mispellingworlds">
-  <main style="padding: 1rem; width: 100%;">
-    <div class="desktop-only">
-      <FluidText text="hopersotantotempoquindimifacciospazio" tag="h1" />
-    </div>
+  <div class="master-stack">
     
-    <div class="mobile-only">
-      <FluidText text="hopersotantotempo" tag="h1" />
-      <FluidText text="quindimifacciospazio" tag="h1" />
+    <div class="text-section">
+      <div class="desktop-only">
+        <FluidText text="hopersotantotempoquindimifacciospazio" tag="h1" />
+      </div>
+      <div class="mobile-only">
+        <FluidText text="hopersotantotempo" tag="h1" />
+        <FluidText text="quindimifacciospazio" tag="h1" />
+      </div>
     </div>
-  </main>
+
+    <div class="image-section">
+      <img src="/lionbg.webp" alt="" />
+    </div>
+
+  </div>
 </Layout>
+
+<style is:global>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .master-stack {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .text-section {
+    /* Il testo occupa la parte superiore. 
+       Dandogli larghezza 100%, FluidText tornerà grande. */
+    width: 100%;
+    flex: 0 0 auto; 
+    box-sizing: border-box;
+  }
+
+  .image-section {
+    /* L'immagine occupa tutto lo spazio rimanente sotto */
+    flex: 1;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    min-height: 0; /* Fondamentale per il resize in flex */
+  }
+
+  .image-section img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Se su mobile il testo è troppo, puoi regolare il padding */
+  @media (max-width: 768px) {
+    .text-section { padding: 2rem 1rem; }
+  }
+</style>
