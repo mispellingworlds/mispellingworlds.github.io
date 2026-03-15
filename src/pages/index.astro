@@ -17,6 +17,7 @@ import FluidText from '../fluidText.astro';
     </div>
 
     <div class="image-section">
+      <img src="/jesterbw.webp" alt="Black and white version of the fool's cap map of the world map." />
     </div>
    
 
@@ -54,8 +55,8 @@ import FluidText from '../fluidText.astro';
  .image-section {
     flex: 1;
     display: flex;
-    align-items: left;
-    justify-content: left;
+    align-items: top;
+    justify-content: center;
     padding-top: 2%;
   }
 
@@ -68,8 +69,9 @@ import FluidText from '../fluidText.astro';
   /* Desktop: Immagine più schiacciata (es. 30% dell'altezza rimanente) */
   @media (min-width: 769px) {
     .image-section img {
-      height: 70%; 
-      padding-left: 2%;
+      height: 50%; 
+      width: 90%;
+      align-items: center;
     }
   }
 
