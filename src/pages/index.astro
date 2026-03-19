@@ -8,19 +8,24 @@ import FluidText from '../fluidText.astro';
     
     <div class="text-section">
       <div class="desktop-only">
-        <FluidText text="ive wasted 2 much time so now im making space" tag="h1" />
+        <FluidText text="ive wasted too much time so now im making space" tag="h1" />
       </div>
       <div class="mobile-only">
-        <FluidText text="ive wasted 2 much time" tag="h1" />
+        <FluidText text="ive wasted too much time" tag="h1" />
         <FluidText text="so now im making space" tag="h1" />
       </div>
     </div>
 
     <div class="image-section">
-      <img src="/jesterbw.webp" alt="Black and white version of the fool's cap map of the world map." />
+      <img src="/patterns_homescreen.webp" alt="Banner Pattern" />
     </div>
-   
-
+    
+    <div class="nav-row">
+      <a href="/about" >About</a>
+      <a href="/posts">Posts</a>
+      <a href="/images">Images</a>
+      <a href="/etc">Etc</a>
+    </div>
   </div>
 </Layout>
 
@@ -41,46 +46,70 @@ import FluidText from '../fluidText.astro';
     width: 100vw;
   }
 
+  /* Titolo in alto */
   .text-section {
-    /* Il testo occupa la parte superiore. 
-       Dandogli larghezza 100%, FluidText tornerà grande. */
     width: 100%;
     flex: 0 0 auto; 
-    box-sizing: border-box;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 1%;
+    padding: 1%;
   }
 
- .image-section {
-    flex: 1;
-    display: flex;
-    align-items: top;
-    justify-content: center;
-    padding-top: 2%;
+  /* Immagine che fa da Banner */
+  .image-section {
+    width: 100%;
+    flex: 0 0 auto; /* Altezza basata sull'immagine o fissa */
   }
 
-.image-section img {
-    /* TRUCCO: forza l'immagine a coprire tutta la larghezza 
-       anche se deve deformarsi leggermente per l'altezza */
-    object-fit: contain; /* "Stretch" invece di "contain" */
+  .image-section img {
+    width: 100%;
+    height: 65vh; /* Regola l'altezza del banner qui */
+    object-fit: fill; /* Mantiene lo stretch che volevi */
+    display: block;
   }
 
-  /* Desktop: Immagine più schiacciata (es. 30% dell'altezza rimanente) */
-  @media (min-width: 769px) {
-    .image-section img {
-      height: 50%; 
-      width: 90%;
-      align-items: center;
-    }
+.nav-row {
+  display: flex;
+  flex-direction: row; /* Li mette sulla stessa riga */
+  justify-content: center; /* Li spinge tutti a destra */
+  gap: 2rem; /* Spazio orizzontale tra un link e l'altro */
+  padding: 1.5rem 2%; /* Distanza dal bordo dell'immagine e dai lati */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-row a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Nohemi-Medium', sans-serif; 
+  font-size: 2rem;
+  text-transform: lowercase;
+}
+
+.nav-row a:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .nav-row {
+    justify-content: center; /* Al centro su mobile per equilibrio */
+    gap: 1rem;
+  }
+}
+
+  /* Fix per h1 del FluidText */
+  h1 {
+    margin: 0 !important;
+    line-height: 0.9;
   }
 
-  /* Se su mobile il testo è troppo, puoi regolare il padding */
   @media (max-width: 768px) {
     .image-section img {
-      width: 100%; 
-      align-items: center;
-
+      height: 25vh; /* Più basso su mobile */
+    }
+    .nav-container {
+      justify-content: center; /* Centrati su mobile per ordine */
+    }
+    .nav-column {
+      text-align: center;
     }
   }
 </style>
