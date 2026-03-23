@@ -16,17 +16,20 @@ import FluidText from '../fluidText.astro';
       </div>
     </div>
 
-    <div class="image-section">
-      <img src="/patterns_homescreen.webp" alt="Banner Pattern" />
-    </div>
-    
+  
     <div class="nav-row">
       <a href="/about" >About</a>
       <a href="/posts">Posts</a>
       <a href="/images">Images</a>
-      <a href="/etc">Etc</a>
+      <a href="/etc">Other</a>
     </div>
+
+    <div class="image-section">
+      <img src="/jesterbw.webp" alt="BW Fool Madcap" />
+    </div>
+  
   </div>
+
 </Layout>
 
 <style is:global>
@@ -56,31 +59,31 @@ import FluidText from '../fluidText.astro';
   /* Immagine che fa da Banner */
   .image-section {
     width: 100%;
-    flex: 0 0 auto; /* Altezza basata sull'immagine o fissa */
+    flex: 0 0 auto;
+    display: flex;         /* Attiva flexbox sul contenitore */
+    justify-content: center; /* Centra l'immagine orizzontalmente */
   }
 
   .image-section img {
-    width: 100%;
-    height: 65vh; /* Regola l'altezza del banner qui */
-    object-fit: fill; /* Mantiene lo stretch che volevi */
-    display: block;
+    height: 70%;
+    width: auto;           /* Mantiene le proporzioni corrette */
+    object-fit: contain;   /* Evita distorsioni */
   }
 
 .nav-row {
   display: flex;
   flex-direction: row; /* Li mette sulla stessa riga */
   justify-content: center; /* Li spinge tutti a destra */
-  gap: 2rem; /* Spazio orizzontale tra un link e l'altro */
-  padding: 1.5rem 2%; /* Distanza dal bordo dell'immagine e dai lati */
+  gap: 8rem; /* Spazio orizzontale tra un link e l'altro */
   width: 100%;
   box-sizing: border-box;
 }
 
 .nav-row a {
   text-decoration: none;
-  color: black;
-  font-family: 'Nohemi-Medium', sans-serif; 
-  font-size: 2rem;
+  color: rgb(101, 101, 101);
+  font-family: 'Cursive', sans-serif; 
+  font-size: 6rem;
   text-transform: lowercase;
 }
 
