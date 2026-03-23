@@ -63,6 +63,10 @@ const { title } = Astro.props;
       .desktop-only {
         display: none;
       }
+      
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
 
       @media (min-width: 768px) {
         .mobile-only { display: none; }

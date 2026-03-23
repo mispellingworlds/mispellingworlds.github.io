@@ -27,6 +27,7 @@ import FluidText from '../fluidText.astro';
     <div class="image-section">
       <img src="/jesterbw.webp" alt="BW Fool Madcap" />
     </div>
+
   
   </div>
 
@@ -65,16 +66,16 @@ import FluidText from '../fluidText.astro';
   }
 
   .image-section img {
-    object-fit: contain;   /* Evita distorsioni */
-    height: 70%;
-    width: auto;           /* Mantiene le proporzioni corrette */
-  }
+  height: 60vh; /* O una misura fissa se vuoi consistenza */
+  width: auto;
+  object-fit: contain;
+}
 
 .nav-row {
   display: flex;
   flex-direction: row; /* Li mette sulla stessa riga */
   justify-content: center; /* Li spinge tutti a destra */
-  gap: 5%; /* Spazio orizzontale tra un link e l'altro */
+  gap: 2rem; /* Spazio orizzontale tra un link e l'altro */
   width: 100%;
   box-sizing: border-box;
 }
@@ -91,7 +92,7 @@ import FluidText from '../fluidText.astro';
 @media (max-width: 768px) {
   .nav-row {
     justify-content: center; /* Al centro su mobile per equilibrio */
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 
@@ -110,9 +111,6 @@ import FluidText from '../fluidText.astro';
     }
     .nav-column {
       text-align: center;
-    }
-    .nav-row {
-      gap: 9%;
     }
   }
 </style>
