@@ -8,10 +8,10 @@ import FluidText from '../fluidText.astro';
     
     <div class="text-section">
       <div class="desktop-only">
-        <FluidText text="ive wasted too much time so now im making space" tag="h1" />
+        <FluidText text="ive wasted 2 much time so now im making space" tag="h1" />
       </div>
       <div class="mobile-only">
-        <FluidText text="ive wasted too much time" tag="h1" />
+        <FluidText text="ive wasted 2 much time" tag="h1" />
         <FluidText text="so now im making space" tag="h1" />
       </div>
     </div>
@@ -74,7 +74,7 @@ import FluidText from '../fluidText.astro';
   display: flex;
   flex-direction: row; /* Li mette sulla stessa riga */
   justify-content: center; /* Li spinge tutti a destra */
-  gap: 8rem; /* Spazio orizzontale tra un link e l'altro */
+  gap: 5%; /* Spazio orizzontale tra un link e l'altro */
   width: 100%;
   box-sizing: border-box;
 }
@@ -83,13 +83,10 @@ import FluidText from '../fluidText.astro';
   text-decoration: none;
   color: rgb(101, 101, 101);
   font-family: 'Cursive', sans-serif; 
-  font-size: 6rem;
+  font-size: 5rem;
   text-transform: lowercase;
 }
 
-.nav-row a:hover {
-  opacity: 0.5;
-}
 
 @media (max-width: 768px) {
   .nav-row {
@@ -106,13 +103,16 @@ import FluidText from '../fluidText.astro';
 
   @media (max-width: 768px) {
     .image-section img {
-      height: 25vh; /* Più basso su mobile */
+      width: 90%; /* Più basso su mobile */
     }
     .nav-container {
       justify-content: center; /* Centrati su mobile per ordine */
     }
     .nav-column {
       text-align: center;
+    }
+    .nav-row {
+      gap: 9%;
     }
   }
 </style>
