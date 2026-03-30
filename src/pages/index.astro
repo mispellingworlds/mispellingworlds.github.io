@@ -18,10 +18,10 @@ import FluidText from '../fluidText.astro';
 
   
     <div class="nav-row">
-      <a href="/about" >About</a>
-      <a href="/posts">Posts</a>
+      <a href="/posts" >Posts</a>
       <a href="/images">Images</a>
-      <a href="/etc">Other</a>
+      <a href="/about">About</a>
+      <a href="/other">Other</a>
     </div>
 
     <div class="image-section">
@@ -34,29 +34,6 @@ import FluidText from '../fluidText.astro';
 </Layout>
 
 <style is:global>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background-color: white;
-  }
-
-  .master-stack {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-  }
-
-  /* Titolo in alto */
-  .text-section {
-    width: 100%;
-    flex: 0 0 auto; 
-    padding: 1%;
-  }
-
   /* Immagine che fa da Banner */
   .image-section {
     width: 100%;
@@ -98,12 +75,6 @@ import FluidText from '../fluidText.astro';
     font-size: 3.2rem;
   }
 }
-
-  /* Fix per h1 del FluidText */
-  h1 {
-    margin: 0 !important;
-    line-height: 0.9;
-  }
 
   @media (max-width: 768px) {
     .image-section img {

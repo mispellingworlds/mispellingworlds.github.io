@@ -3,6 +3,8 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
+
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -22,65 +24,11 @@ const { title } = Astro.props;
     <meta name="color-scheme" content="only light">
     <title>{title}</title>
 
-    <link rel="preload" href="/fonts/Nohemi-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/Cursive.ttf" as="font" type="font/truetype" crossorigin="anonymous" />
-
-    <style is:global>
-      @font-face {
-        font-family: 'Nohemi-SemiBold';
-        src: url('/fonts/Nohemi-SemiBold.woff2') format('woff2');
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'Nohemi-Medium';
-        src: url('/fonts/Nohemi-Medium.woff2') format('woff2');
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'Cursive';
-        src: url('/fonts/Cursive.ttf') format('truetype');
-        font-style: normal;
-        font-display: swap;
-      }
+    <link rel="preload" href="/fonts/Nohemi-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/Cursive.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/GoogleSansFlex.ttf" as="font" type="font/truetype" crossorigin="anonymous" />
 
 
-      :root { color-scheme: light; }
-
-      html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        background-color: #ffffff !important;
-        font-family: 'Nohemi-Medium', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        forced-color-adjust: none;
-      }
-
-      * { box-sizing: border-box; }
-
-      /* UTILITY CLASSES GLOBALI */
-      .mobile-only {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .desktop-only {
-        display: none;
-      }
-      
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-
-      @media (min-width: 768px) {
-        .mobile-only { display: none; }
-        .desktop-only { display: block; }
-      }
-    </style>
   </head>
   <body>
     <slot />

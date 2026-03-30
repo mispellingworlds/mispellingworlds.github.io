@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+import type { ImageMetadata } from 'astro';
+
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/drawings/*.{jpeg,jpg,png,gif}'
+);
+
+
+const images = await Promise.all(
+  Object.values(imageModules).map(async (importImg) => {
+    const img = await importImg();
+    return img.default;
+  })
+);
+---
+
+<Layout title="mispellingworlds">
+    <div id="gallery" class="text-section">
+        {images.map((img) => (
+            <img src={img.src} alt="drawing" class="thumb" />
+        ))}
+    </div>
+
+    <div id="lightbox" class="hidden">
+        <img id="lightbox-img" src="" alt="full view" />
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        const thumbs = document.querySelectorAll<HTMLImageElement>('.thumb');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+
+        if (!lightbox || !lightboxImg) return;
+
+        thumbs.forEach((img) => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.remove('hidden');
+        });
+        });
+
+        lightbox.addEventListener('click', () => {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+        });
+        });
+    </script>
+
+    <style>
+    #gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    }
+
+    .thumb {
+    width: 90%;
+    height: 90vh;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    
+    }
+
+  .thumb:hover {
+    transform: scale(1.08);
+    z-index: 3;
+    }
+
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #lightbox.hidden {
+  display: none;
+  }
+
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+  <Footer />
+  </div>
+</Layout>

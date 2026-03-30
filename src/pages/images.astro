@@ -1,0 +1,36 @@
+---
+const pageTitle = "Images";
+import FluidText from '../fluidText.astro';
+import Layout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="mispellingworlds">
+  <div class="master-stack">
+    
+  <div class="text-section">
+      <div class="desktop-only">
+        <FluidText text="i want to become an image 4 your mind" tag="h1" />
+      </div>
+      <div class="mobile-only">
+        <FluidText text="i want to become an" tag="h1" />
+        <FluidText text="image 4 your mind" tag="h1" />
+      </div>
+  </div>
+
+  <div class="text-content">
+    <ul>
+        <li><a href="/drawings"><b>drawings</b></a></li>
+        axiomatic doodling, b/w pointillism, methodic expansion. scanned from my A5 notebook.
+    </ul>
+
+    <ul>
+        <li><b>screenshots</b></li>
+    </ul>
+
+
+  </div>
+
+  <Footer />
+  </div>
+</Layout>

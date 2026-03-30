@@ -1,0 +1,91 @@
+
+
+@font-face {
+    font-family: 'Nohemi-Medium';
+    src: url('/fonts/Nohemi-Medium.woff2') format('woff2');
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Cursive';
+    src: url('/fonts/Cursive.woff2') format('woff2');
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'GoogleSansFlex';
+    src: url('/fonts/GoogleSansFlex.ttf') format('truetype');
+    font-style: normal;
+    font-display: block;
+}
+
+
+html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #ffffff !important;
+        font-family: 'Nohemi-Medium', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        forced-color-adjust: none;
+}
+
+  .master-stack {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Titolo in alto */
+  .text-section {
+    width: 100%;
+    flex: 0 0 auto; 
+    padding: 1%;
+  }
+
+  .text-content {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.3;
+    font-family: 'GoogleSansFlex', sans-serif;
+    font-size: 1.5rem;
+
+  }
+
+  /* Fix per h1 del FluidText */
+  h1 {
+    margin: 0 !important;
+    line-height: 0.9;
+  }
+
+  footer { margin-top: auto; 
+        margin-bottom: 1rem;   
+}
+
+:root { color-scheme: light; }
+
+
+* { box-sizing: border-box; }
+
+.mobile-only {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.desktop-only {
+    display: none;
+}
+      
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .mobile-only { display: none; }
+    .desktop-only { display: block; }
+}

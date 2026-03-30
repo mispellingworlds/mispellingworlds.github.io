@@ -1,28 +1,30 @@
 ---
-const pageTitle = "About Me";
-
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = false;
-const goal = 3;
+const pageTitle = "About";
 import FluidText from '../fluidText.astro';
 import Layout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="mispellingworlds">
   <div class="master-stack">
     
-    <div class="text-section">
-        <FluidText text="im swagging" tag="h1" />
-    </div>
+  <div class="text-section">
+      <div class="desktop-only">
+        <FluidText text="ive got so bored i found new ways of breathing+" tag="h1" />
+      </div>
+      <div class="mobile-only">
+        <FluidText text="ive got so bored ive found" tag="h1" />
+        <FluidText text="new ways of breathing+    " tag="h1" />
+      </div>
+  </div>
 
+  <div class="text-content">
+    everything is interesting, or has the possibility of being interesting. 
+    i believe in a newfound digital psychedelia born from the ashes of overcrowded online spaces, 
+    capable of sprawling through the cracks of this circuit-woven monolith to bring afloat what's 
+    sparkling; capable of new ways of wonder and conscious of the novel ideas of our time.
+  </div>
+
+  <Footer />
   </div>
 </Layout>
