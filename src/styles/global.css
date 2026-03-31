@@ -77,6 +77,7 @@ html, body {
     gap: 0.5rem;
 }
 
+
 .desktop-only {
     display: none;
 }

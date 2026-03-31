@@ -6,107 +6,88 @@ interface Props {
 
 const { text, tag: Tag = 'div' } = Astro.props;
 const letters = text.split("");
+// Generiamo un ID unico per gestire più istanze nella stessa pagina
+const id = `fluid-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<div class="fluid-container">
+<div class="fluid-container" id={id}>
   <Tag class="fluid-target">
-    {letters.map((char: string) => (
+    {letters.map((char) => (
       <span class="char">{char === " " ? "\u00A0" : char}</span>
     ))}
   </Tag>
 </div>
 
 <style>
-  .fluid-container {
+.fluid-container {
     width: 100%;
     display: block;
-    overflow: hidden; /* Evita tagli visivi a destra */
+    overflow: visible; /* Cambiato da hidden a visible per non tagliare l'antialiasing */
     line-height: 1;
-    padding: 0;
+    padding-right: 0.1em; /* Piccolo buffer laterale basato sulla dimensione del font */
   }
   .fluid-target {
     display: inline-block;
     white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    line-height: 1.1;
+    font-size: 8vw; 
     font-family: 'Nohemi-Medium', sans-serif;
     margin: 0;
-    /* Transizione rapida per nascondere il ricalcolo al resize */
-    /*transition: opacity 1s ease-in;*/
+    line-height: 1.1;
     transform-origin: left center;
-  }
-  .fluid-target.is-ready {
-    opacity: 1;
     visibility: visible;
+    /* Ottimizzazione rendering */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   .char {
     display: inline-block;
     cursor: pointer;
     user-select: none;
-    will-change: color;
+    transition: color 0.2s ease;
   }
 </style>
 
-<script>
-  const palette = ['#ffffff']; //se decidi di lasciare bianco, cancella
-  let resizeTimeout: number;
-  
-  function handleLetterClick(event: MouseEvent) {
-    const el = event.target as HTMLElement;
-    if (el?.classList.contains('char')) {
-      el.style.color = palette[Math.floor(Math.random() * palette.length)];
-    }
-  }
-
-  function scaleElement(container: HTMLElement) {
-    const target = container.querySelector('.fluid-target') as HTMLElement;
-    if (!target) return;
-
-    // Se l'elemento è nascosto (display: none), resettiamo e usciamo
-    if (container.offsetWidth === 0) {
-      target.classList.remove('is-ready');
-      return;
-    }
-
-    // Misurazione senza cambiare position (evita bug sui click)
-    target.style.fontSize = '10px'; 
+<script is:inline define:vars={{ id }}>
+  // Usiamo is:inline per eseguire lo script nel momento esatto in cui viene letto l'HTML
+  (function() {
+    const container = document.getElementById(id);
+    if (!container) return;
+    const target = container.querySelector('.fluid-target');
     
-    // getBoundingClientRect è fondamentale per i sub-pixel (evita il testo tagliato)
-    const containerWidth = container.getBoundingClientRect().width;
-    const textWidth = target.getBoundingClientRect().width;
-    
-    if (textWidth > 0) {
-      // Moltiplicatore 0.99 per sicurezza contro gli arrotondamenti dei browser
-      const ratio = (containerWidth / textWidth) * 1;
-      target.style.fontSize = `${10 * ratio}px`;
+    function scale() {
+      // Rimuovi il reset a 10px che causava il salto visivo
+      const cWidth = container.getBoundingClientRect().width;
+      const tWidth = target.getBoundingClientRect().width;
       
-      // Forza il rendering prima di mostrare
-      void target.offsetWidth;
-      target.classList.add('is-ready');
+      if (tWidth > 0) {
+        const currentSize = parseFloat(window.getComputedStyle(target).fontSize);
+        const ratio = cWidth / tWidth;
+        const newSize = currentSize * ratio;
+
+        // Applica solo se la differenza è significativa (> 2px) 
+        // per evitare micro-oscillazioni fastidiose
+        if (Math.abs(newSize - currentSize) > 2) {
+          target.style.fontSize = newSize + 'px';
+        }
+      }
     }
-  }
 
-  function setup() {
-    document.querySelectorAll('.fluid-container').forEach(c => scaleElement(c as HTMLElement));
-  }
+    // Eseguiamo subito
+    scale();
 
-  // Event Listeners
-  document.addEventListener('click', handleLetterClick);
-  document.addEventListener('astro:page-load', setup);
-  
-  if ("fonts" in document) {
-    document.fonts.ready.then(setup);
-  }
+    // Eseguiamo al caricamento dei font per correggere eventuali micro-differenze
+    if ("fonts" in document) {
+      document.fonts.ready.then(scale);
+    }
 
-  window.addEventListener('resize', () => {
-    // Nascondiamo il testo durante il resize per evitare l'effetto "tagliato"
-    document.querySelectorAll('.fluid-target').forEach(t => t.classList.remove('is-ready'));
-    
-    clearTimeout(resizeTimeout);
-    resizeTimeout = window.setTimeout(setup, 50); // Piccolo debounce per stabilità
-  });
+    // Gestione resize con ricalcolo immediato (senza timeout per feedback istantaneo)
+    window.addEventListener('resize', scale);
 
-  // Init
-  setup();
+    // Click handler delegato (più performante)
+    container.addEventListener('click', (e) => {
+      if (e.target.classList.contains('char')) {
+        e.target.style.color = '#ffffff'; // O la tua logica di palette
+      }
+    });
+  })();
 </script>
