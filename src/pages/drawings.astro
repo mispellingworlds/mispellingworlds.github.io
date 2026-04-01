@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 import type { ImageMetadata } from 'astro';
 
@@ -109,6 +110,6 @@ const images = await Promise.all(
     }
 }
 </style>
-
+  <Footer />
   </div>
 </Layout>
