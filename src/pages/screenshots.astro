@@ -5,13 +5,14 @@ import Footer from '../components/Footer.astro';
 import Gallery from '../components/Gallery.astro';
 
 // Definisci qui la cartella specifica per questa pagina
-const drawingsFolder = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/drawings/*.{jpeg,jpg,png,gif}'
+const Folder = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/screenshots/*.{jpeg,jpg,png,gif}'
 );
+
 ---
 
 <Layout title="mispellingworlds">
   <Header />
-  <Gallery folder={drawingsFolder} />
+  <Gallery folder={Folder} />
   <Footer />
 </Layout>
