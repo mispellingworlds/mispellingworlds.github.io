@@ -67,23 +67,26 @@ const images = await Promise.all(
 
 <style>
 #gallery {
-    display: grid;
-    margin: 0 auto;
+    column-count: 3; /* Numero di colonne */
+    column-gap: 30px; /* Spazio orizzontale tra colonne */
     width: 80%;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    margin: 0 auto;
 }
 
 .thumb {
     width: 100%;
-    height: 100%;
+    height: auto; /* Fondamentale: l'altezza deve essere naturale */
+    display: block;
+    margin-bottom: 30px; /* Spazio verticale tra le immagini */
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.25s ease;
+    /* Impedisce che l'immagine venga spezzata tra due colonne */
+    break-inside: avoid;
 }
 
 .thumb:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
     z-index: 3;
 }
 
