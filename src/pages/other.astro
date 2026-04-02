@@ -1,0 +1,31 @@
+---
+const pageTitle = "Images";
+import FluidText from '../fluidText.astro';
+import Layout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="mispellingworlds">
+  <div class="master-stack">
+    
+  <div class="text-section">
+      <div class="desktop-only">
+        <FluidText text="every single thing has a part of nothing" tag="h1" />
+      </div>
+      <div class="mobile-only">
+        <FluidText text="every single thing has" tag="h1" />
+        <FluidText text="a part of nothing           " tag="h1" />
+      </div>
+  </div>
+
+  <div class="text-content">
+    <ul>
+        <li><a target="_blank" href="https://cartografia.bandcamp.com/music" style="color: gray; font-size: 2rem"><b>bandcamp</b></a></li>
+        <li><a href="/inspiration" style="color: gray; font-size: 2rem"><b>inspirations</b></a></li>
+
+    </ul>
+  </div>
+
+  <Footer />
+  </div>
+</Layout>
