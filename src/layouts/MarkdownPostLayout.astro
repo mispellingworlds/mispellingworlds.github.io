@@ -1,0 +1,23 @@
+---
+import Layout from './BaseLayout.astro';
+import FluidText from '../fluidText.astro'
+import Footer from '../components/Footer.astro'
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="mispellingworlds">
+  <div class="master-stack">
+    
+  <div class="text-section">
+      <div class="desktop-only">
+        <FluidText text={frontmatter.title} tag="h1" />
+      </div>
+  </div>
+
+  <div class="text-content">
+    <slot />
+  </div>
+
+  <Footer />
+  </div>
+</Layout>

@@ -1,18 +1,10 @@
 ---
-title: 'My First Swag Post'
-pubDate: 2025-03-14
-description: 'This is the first swag post of my new Astro blog.'
-author: 'Astro Swagger'
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Cactus Arcade'
+pubDate: 2026-04-03'
 ---
-# My First Swag Post
+# Cactusquid games are crazy 
 
-Published on: 2025-03-14
-
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 ## What I've accomplished
 

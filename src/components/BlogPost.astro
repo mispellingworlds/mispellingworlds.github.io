@@ -1,0 +1,5 @@
+---
+const { title, url, pubDate } = Astro.props;
+---
+
+<li><a href={url} style="color: rgb(95, 95, 95); font-size: 1.8rem; text-decoration:none"><b>{title}</b></a> <i style="color: rgb(183, 183, 183)">{pubDate}</i></li>

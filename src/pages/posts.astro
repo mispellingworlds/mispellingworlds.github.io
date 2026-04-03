@@ -3,6 +3,9 @@ const pageTitle = "Posts";
 import FluidText from '../fluidText.astro';
 import Layout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
 <Layout title="mispellingworlds">
@@ -19,9 +22,30 @@ import Footer from '../components/Footer.astro';
   </div>
 
   <div class="text-content">
-    swagtest
+    <ul>
+      {allPosts.map((post: any) => (
+        <BlogPost 
+          url={post.url} 
+          title={post.frontmatter.title} 
+          pubDate={new Date(post.frontmatter.pubDate).toISOString().split('T')[0]}
+          )}
+        />
+      ))}
+    </ul>
   </div>
 
   <Footer />
+
+  
+<style is:global>
+    .a {
+        color: gray;
+    }
+</style>
+
+  <script>
+		import "../scripts/menu.js";
+	</script>
+
   </div>
 </Layout>

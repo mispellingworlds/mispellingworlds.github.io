@@ -3,6 +3,7 @@ const pageTitle = "About";
 import FluidText from '../fluidText.astro';
 import Layout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
+import LinkedPageTargetBlank from '../components/LinkedPageTargetBlank.astro';
 ---
 
 <Layout title="mispellingworlds">
@@ -19,16 +20,39 @@ import Footer from '../components/Footer.astro';
 
   <div class="text-content">
     <ul>
-        <li><a target="_blank" href="https://waiting-all-my.life/" style="color: gray; font-size: 2rem"><b>7038634357</b></a></li>
-        <li><a target="_blank" href="https://store.steampowered.com/app/650700/Yume_Nikki/" style="color: gray; font-size: 2rem"><b>Yume Nikki</b></a></li>
-        <li><a target="_blank" href="https://edglrd.com/" style="color: gray; font-size: 2rem"><b>EDGLRD</b></a></li>
-        <li><a target="_blank" href="https://latuli.bigcartel.com/" style="color: gray; font-size: 2rem"><b>Tulpess</b></a></li>
-        <li><a target="_blank" href="https://x.com/LIL_ICEBUNNY" style="color: gray; font-size: 2rem"><b>James Ferraro</b></a></li>
-        <li><a target="_blank" href="https://www.instagram.com/dg_bladee/" style="color: gray; font-size: 2rem"><b>Bladee</b></a></li>
-        <li><a target="_blank" href="https://wnoadiarwb.us/" style="color: gray; font-size: 2rem"><b>wnoadiardb</b></a></li>
-        <li><a target="_blank" href="https://www.davidkanaga.com/" style="color: gray; font-size: 2rem"><b>David Kanaga</b></a></li>
-        <li><a target="_blank" href="https://www.teklintowe.com/" style="color: gray; font-size: 2rem"><b>Tek Lintowe</b></a></li>
-        <li><a target="_blank" href="https://www.modifiedguilt.com/" style="color: gray; font-size: 2rem"><b>Charles Stobbes III</b></a></li>
+        <LinkedPageTargetBlank 
+          url="https://waiting-all-my.life/"
+          title="7038634357" />
+        <LinkedPageTargetBlank 
+          url="https://store.steampowered.com/app/650700/Yume_Nikki/"
+          title="Yume Nikki" />
+        <LinkedPageTargetBlank 
+          url="https://edglrd.com/"
+          title="EDGLRD" />
+        <LinkedPageTargetBlank 
+          url="https://latuli.bigcartel.com/"
+          title="Tulpess" />
+        <LinkedPageTargetBlank 
+          url="https://x.com/LIL_ICEBUNNY"
+          title="James Ferraro" />
+        <LinkedPageTargetBlank 
+          url="https://www.instagram.com/dg_bladee/"
+          title="Bladee" />
+        <LinkedPageTargetBlank 
+          url="https://wnoadiarwb.us/"
+          title="wnoadiarwb" />
+        <LinkedPageTargetBlank 
+          url="https://www.davidkanaga.com/"
+          title="David Kanaga" />
+        <LinkedPageTargetBlank 
+          url="https://wnoadiarwb.us/"
+          title="wnoadiarwb" />
+        <LinkedPageTargetBlank 
+          url="https://www.teklintowe.com/"
+          title="Tek Lintowe" />
+        <LinkedPageTargetBlank 
+          url="https://www.modifiedguilt.com/"
+          title="Charles Stobbes III" />
     </ul>
   </div>
 

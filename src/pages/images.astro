@@ -3,6 +3,7 @@ const pageTitle = "Images";
 import FluidText from '../fluidText.astro';
 import Layout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
+import LinkedPage from '../components/LinkedPage.astro';
 ---
 
 <Layout title="mispellingworlds">
@@ -20,13 +21,17 @@ import Footer from '../components/Footer.astro';
 
   <div class="text-content">
     <ul>
-        <li><a href="/drawings" style="color: gray; font-size: 2rem"><b>drawings</b></a></li>
+        <LinkedPage 
+          url="/drawings"
+          title="drawings" />
         axiomatic doodling, b/w pointillism, emotional formalism. scanned from my 12,7 x 8,6 cm notebook.
     </ul>
 
     <ul>
-        <li><a href="/screenshots" style="color: gray; font-size: 2rem"><b>screenshots</b></a></li>
-        taking a screenshot is the 2D equivalent of shooting a camera; it can thus be seen as a way to capture peculiarities, 
+        <LinkedPage 
+          url="/screenshots"
+          title="screenshots" />
+        taking a screenshot is the 2D equivalent of shooting a camera. it can be seen as a way to capture peculiarities, 
         crystallize memories and give images new meaning.
     </ul>
 
