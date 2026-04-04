@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "astro": "^6.0.4",
+    "defu": "^6.1.5",
     "sass": "^1.98.0",
     "typescript": "^5.9.3",
     "webcoreui": "^1.4.0"
