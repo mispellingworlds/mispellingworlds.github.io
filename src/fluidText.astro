@@ -48,37 +48,45 @@ const id = `fluid-${Math.random().toString(36).substr(2, 9)}`;
 </style>
 
 <script is:inline define:vars={{ id }}>
+  // Usiamo is:inline per eseguire lo script nel momento esatto in cui viene letto l'HTML
   (function() {
     const container = document.getElementById(id);
     if (!container) return;
     const target = container.querySelector('.fluid-target');
-
+    
     function scale() {
+      // Rimuovi il reset a 10px che causava il salto visivo
       const cWidth = container.getBoundingClientRect().width;
       const tWidth = target.getBoundingClientRect().width;
-
+      
       if (tWidth > 0) {
         const currentSize = parseFloat(window.getComputedStyle(target).fontSize);
         const ratio = cWidth / tWidth;
         const newSize = currentSize * ratio;
 
+        // Applica solo se la differenza è significativa (> 2px) 
+        // per evitare micro-oscillazioni fastidiose
         if (Math.abs(newSize - currentSize) > 2) {
           target.style.fontSize = newSize + 'px';
         }
       }
     }
 
+    // Eseguiamo subito
     scale();
 
+    // Eseguiamo al caricamento dei font per correggere eventuali micro-differenze
     if ("fonts" in document) {
       document.fonts.ready.then(scale);
     }
 
+    // Gestione resize con ricalcolo immediato (senza timeout per feedback istantaneo)
     window.addEventListener('resize', scale);
 
+    // Click handler delegato (più performante)
     container.addEventListener('click', (e) => {
       if (e.target.classList.contains('char')) {
-        e.target.style.color = '#ffffff';
+        e.target.style.color = '#ffffff'; // O la tua logica di palette
       }
     });
   })();
