@@ -43,9 +43,15 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
     }
 </style>
 
-  <script>
-		import "../scripts/menu.js";
-	</script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      var menu = document.querySelector('.menu');
+      menu?.addEventListener('click', function() {
+        var isExpanded = menu.getAttribute('aria-expanded') === 'true';
+        menu.setAttribute('aria-expanded', String(!isExpanded));
+      });
+    });
+  </script>
 
   </div>
 </Layout>
