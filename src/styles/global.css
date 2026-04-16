@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'GoogleSansFlex';
-    src: url('/fonts/GoogleSansFlex.ttf') format('truetype');
+    src: url('/fonts/GoogleSansFlex.woff2') format('woff2');
     font-style: normal;
     font-display: block;
 }
