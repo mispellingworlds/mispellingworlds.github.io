@@ -30,6 +30,7 @@ html, body {
         font-family: 'Nohemi-Medium', sans-serif;
         -webkit-font-smoothing: antialiased;
         forced-color-adjust: none;
+        scrollbar-gutter: stable;
 }
 
   .master-stack {

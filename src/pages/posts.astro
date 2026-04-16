@@ -5,7 +5,7 @@ import Layout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 import BlogPost from '../components/BlogPost.astro';
 
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const allPosts = Object.values(import.meta.glob('./posts/*.{md,mdx}', { eager: true }));
 ---
 
 <Layout title="mispellingworlds">

@@ -24,8 +24,7 @@ const id = `fluid-${Math.random().toString(36).substr(2, 9)}`;
     display: block;
     overflow: visible; /* Cambiato da hidden a visible per non tagliare l'antialiasing */
     line-height: 1;
-    padding-right: 0.1em; /* Piccolo buffer laterale basato sulla dimensione del font */
-  }
+    }
   .fluid-target {
     display: inline-block;
     white-space: nowrap;
@@ -33,7 +32,7 @@ const id = `fluid-${Math.random().toString(36).substr(2, 9)}`;
     font-family: 'Nohemi-Medium', sans-serif;
     margin: 0;
     line-height: 1.1;
-    transform-origin: left center;
+    transform-origin: center;
     visibility: visible;
     /* Ottimizzazione rendering */
     -webkit-font-smoothing: antialiased;
@@ -43,7 +42,6 @@ const id = `fluid-${Math.random().toString(36).substr(2, 9)}`;
     display: inline-block;
     cursor: pointer;
     user-select: none;
-    transition: color 0.2s ease;
   }
 </style>
 
