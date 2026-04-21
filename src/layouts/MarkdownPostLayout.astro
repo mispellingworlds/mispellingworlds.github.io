@@ -9,7 +9,15 @@ const { frontmatter } = Astro.props;
   <div class="master-stack">
 
   <div class="text-section">
-      <FluidText text={frontmatter.title} tag="h1" />
+      <div class="desktop-only">
+        <FluidText text={frontmatter.title} tag="h1" />
+      </div>
+      <div class="mobile-only">
+        {frontmatter.titleMobile
+          ? frontmatter.titleMobile.map((line: string) => <FluidText text={line} tag="h1" />)
+          : <FluidText text={frontmatter.title} tag="h1" />
+        }
+      </div>
   </div>
 
   <div class="text-content">
