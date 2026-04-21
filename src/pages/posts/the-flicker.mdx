@@ -1,0 +1,34 @@
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'the flicker (pure digital reconstruction)'
+pubDate: 2026-04-20
+---
+import { Vimeo } from 'astro-embed';
+import PostImage from '../../components/PostImage.astro';
+import flickerVisualization from '../../assets/posts-images/the-flicker-algorithmically-purified-remake/visualization_enlarged.png';
+
+<p>
+<b>the flicker</b> (1966) is a film by <b>tony conrad</b>, best known for being one of the pioneers of musical minimalism and drone. among his other interests there was the psychedelic effect of stroboscopic lights, which he extensively studied and decided to explore with his first film
+</p>
+
+<p>
+<b>the flicker</b> consists in fact of different patterns of black and white frames which when projected create a powerful strobe effect. interacting with the film gives the viewer access to a myriad of visual hallucinations, colors, rotating fractals, explosions, holes, all hidden in the pulsation of these solid b/w frames; it's genuinely comparable to the effect of a psychedelic drug
+</p>
+
+<PostImage src={flickerVisualization} alt="Visualization of the Flicker pattern" />
+<p>
+not only does <b>the flicker</b> strip cinema down to its elementary elements - light and time - but it trascends the film form itself. when this film is played, it is not simply played on the screen, it escapes and plays itself on the surrounding walls, on the viewer's skin; it is watched and felt even with eyes closed; it creates images which exist only inside the brain, images which will always be different and unique
+</p>
+
+<p>
+i am completely fascinated by its trascendental quality. it's a radically unique approach to what at the time was the newest artform. <b>conrad</b> created something more than cinema, something maybe more aptly described as an object, a well designed machine. it is this train of thought that inspired me to reconstruct it digitally - a thought that <b>conrad</b> also shared, as it is known he recreated <b>the flicker</b> on an amiga computer, although he never released it to the public
+</p>
+
+<p>
+i used an algorithm to mark each frame of the original cut as either white or black. the resulting data was used to rebuild the film using solid <b>#000000</b> and <b>#ffffff</b> colors, thus eliminating imperfections in the film roll.
+this reconstruction also removes the introductory segment and music from the original, in order to enhance its digital essentiality and purity. the format is <b>1920x1080</b> and it plays at the original speed of <b>24</b>.
+</p>
+
+<p><b>(epilepsy warning)</b></p>
+<Vimeo id="1184855292" />
+
