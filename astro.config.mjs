@@ -6,6 +6,6 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://mispellingworlds.github.io',
+  site: 'https://cartografia.xyz',
   integrations: [mdx(), sitemap()],
 })
