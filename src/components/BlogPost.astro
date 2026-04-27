@@ -2,4 +2,18 @@
 const { title, url, pubDate } = Astro.props;
 ---
 
-<li><a href={url} style="color: rgb(95, 95, 95); font-size: 1.8rem; text-decoration:none"><b>{title}</b></a> <i style="color: rgb(183, 183, 183)">{pubDate}</i></li>
+<li><a href={url} class="post-link"><b>{title}</b></a> <i style="color: rgb(183, 183, 183)">{pubDate}</i></li>
+
+<style>
+  .post-link {
+    color: rgb(95, 95, 95);
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .post-link {
+      font-size: 1.3rem;
+    }
+  }
+</style>
