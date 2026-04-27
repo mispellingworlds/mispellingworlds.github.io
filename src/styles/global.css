@@ -93,5 +93,9 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .text-content {font-size: 1.2rem;}
+    .text-content {
+        font-size: 1.2rem;
+        width: 95%;
+        max-width: 95%;
+    }
 }
