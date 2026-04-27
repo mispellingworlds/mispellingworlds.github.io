@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro'
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title="mispellingworlds" description={frontmatter.description}>
+<Layout title={frontmatter.title} description={frontmatter.description}>
   <div class="master-stack">
 
   <div class="text-section">

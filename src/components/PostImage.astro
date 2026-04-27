@@ -4,9 +4,10 @@ import { Image } from 'astro:assets';
 interface Props {
   src: ImageMetadata;
   alt: string;
+  width?: number;
 }
 
-const { src, alt } = Astro.props;
+const { src, alt, width } = Astro.props;
 ---
 
-<Image src={src} alt={alt} />
+<Image src={src} alt={alt} width={width} />
