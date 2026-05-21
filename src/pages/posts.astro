@@ -5,7 +5,10 @@ import Layout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 import BlogPost from '../components/BlogPost.astro';
 
-const allPosts = Object.values(import.meta.glob('./posts/*.{md,mdx}', { eager: true }));
+const allPosts = Object.values(import.meta.glob('./posts/*.{md,mdx}', { eager: true }))
+  .sort((a: any, b: any) =>
+    new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+  );
 ---
 
 <Layout title="cartografia">

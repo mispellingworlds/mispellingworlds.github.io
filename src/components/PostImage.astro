@@ -5,9 +5,32 @@ interface Props {
   src: ImageMetadata;
   alt: string;
   width?: number;
+  size?: string;
+  mobileSize?: string;
 }
 
-const { src, alt, width } = Astro.props;
+const { src, alt, width, size, mobileSize = '100%' } = Astro.props;
 ---
 
-<Image src={src} alt={alt} width={width} />
+<Image
+  src={src}
+  alt={alt}
+  width={width}
+  class="post-image"
+  style={`--post-image-size: ${size ?? 'auto'}; --post-image-mobile-size: ${mobileSize};`}
+/>
+
+<style>
+  .post-image {
+    width: var(--post-image-size);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .post-image {
+      width: var(--post-image-mobile-size);
+    }
+  }
+</style>
