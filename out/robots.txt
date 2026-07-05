@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cartografia.xyz/sitemap-index.xml
