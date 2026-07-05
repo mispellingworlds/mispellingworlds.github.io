@@ -1,0 +1,88 @@
+/* Self-hosted fonts from /public/fonts. Stable URLs so they can be preloaded
+   in app/layout.tsx (next/font skips preload when applied via CSS variable). */
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Named CursiveDisplay, not "Cursive", because `cursive` is a CSS generic
+     keyword — an unquoted "Cursive" in a font stack would resolve to it. */
+  font-family: 'CursiveDisplay';
+  src: url('/fonts/BeforeTheRain.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GoogleSansFlex';
+  src: url('/fonts/GoogleSansFlex.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  /* Dingbat font: ASCII codepoints map to hand-drawn stars (used by
+     components/random-star.tsx). display: block, not swap — the fallback
+     would render the raw ASCII letter instead of a star. */
+  font-family: 'Stars90';
+  src: url('/fonts/90stars.woff2') format('woff2');
+  font-style: normal;
+  font-display: block;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply m-0 w-full bg-paper font-google antialiased;
+    color-scheme: light;
+    forced-color-adjust: none;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Vertical page scaffold: title on top, content, footer pinned to bottom. */
+  .master-stack {
+    @apply flex min-h-screen flex-col;
+  }
+
+  /* Full-width band that holds a FluidText title. */
+  .text-section {
+    @apply w-full flex-none p-[1%];
+  }
+
+  /* The reading column used by posts and text pages. */
+  .text-content {
+    @apply mx-auto w-4/5 max-w-[80ch] p-4 font-google text-[1.5rem] leading-[1.3];
+  }
+
+  @media (max-width: 768px) {
+    .text-content {
+      @apply w-[95%] max-w-[95%] text-[1.2rem];
+    }
+  }
+
+  /* Post images are clickable (open the lightbox). */
+  .text-content img {
+    @apply cursor-pointer;
+  }
+
+  /* PostImage responsive width: swap to the mobile width below 768px. */
+  @media (max-width: 768px) {
+    .post-image {
+      width: var(--post-image-mobile-size) !important;
+    }
+  }
+}
