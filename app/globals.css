@@ -80,15 +80,13 @@
     }
   }
 
-  /* Before The Rain has hairline swashes that ClearType's subpixel
-     antialiasing fringes with red/blue on Windows. will-change promotes the
-     text to its own GPU layer, which rasterizes with smooth grayscale
-     antialiasing instead (macOS/iOS already antialias everything).
-     will-change rather than a transform so Tailwind translate utilities on
-     the same elements keep working. */
+  /* NOTE: don't force GPU-layer rasterization here (will-change/transform)
+     to get grayscale antialiasing — the compositing layer is sized to the
+     element's layout box, and Before The Rain's swashes overflow that box by
+     design, so they get clipped. ClearType fringing on Windows is the lesser
+     evil; macOS/iOS antialias everything anyway. */
   .font-cursive {
     text-rendering: optimizeLegibility;
-    will-change: transform;
   }
 
   /* Post images are clickable (open the lightbox). */
