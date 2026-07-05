@@ -9,12 +9,40 @@ type FluidTextProps = {
   tag?: Tag;
 };
 
-// Starting guess for the line width in user units, replaced by the measured
-// width after mount. AVG_ADVANCE is roughly Nohemi's average glyph advance as
-// a fraction of the font size — it only affects the pre-measurement frame (and
-// the server-rendered HTML), so it just needs to be in the right ballpark.
-const EST_W = 1000;
-const AVG_ADVANCE = 0.5;
+// Per-character advance widths of Nohemi at weight 700 (500 face + synthetic
+// bold), in em units, measured once via canvas measureText in Chrome. The
+// server-rendered width is the per-string sum of these, exact up to kerning
+// (≲1%, and kerning only ever makes the real line *narrower*), so the first
+// paint already looks right and the post-hydration measurement is an
+// imperceptible touch-up rather than a visible jump.
+// prettier-ignore
+const ADVANCES: Record<string, number> = {
+  ' ': 0.229, '!': 0.219, '"': 0.3603, '#': 0.772, '$': 0.6603, '%': 0.8812,
+  '&': 0.7238, "'": 0.2013, '(': 0.3498, ')': 0.3498, '*': 0.47, '+': 0.546,
+  ',': 0.218, '-': 0.5272, '.': 0.218, '/': 0.4368,
+  '0': 0.712, '1': 0.4595, '2': 0.6495, '3': 0.6747, '4': 0.727, '5': 0.671,
+  '6': 0.6877, '7': 0.612, '8': 0.6945, '9': 0.6877,
+  ':': 0.218, ';': 0.218, '<': 0.5723, '=': 0.546, '>': 0.5723, '?': 0.6205,
+  '@': 0.9557,
+  A: 0.7085, B: 0.6773, C: 0.7345, D: 0.682, E: 0.5557, F: 0.5463, G: 0.7462,
+  H: 0.682, I: 0.2087, J: 0.6228, K: 0.6753, L: 0.535, M: 0.9175, N: 0.7218,
+  O: 0.7472, P: 0.6693, Q: 0.747, R: 0.6813, S: 0.6603, T: 0.6135, U: 0.694,
+  V: 0.6865, W: 1.0913, X: 0.6945, Y: 0.6817, Z: 0.6332,
+  '[': 0.28, '\\': 0.4368, ']': 0.28, '^': 0.4377, '_': 0.5777, '`': 0.27,
+  a: 0.5935, b: 0.6085, c: 0.5823, d: 0.6085, e: 0.584, f: 0.4213, g: 0.6085,
+  h: 0.586, i: 0.1975, j: 0.1975, k: 0.5843, l: 0.1975, m: 0.925, n: 0.586,
+  o: 0.597, p: 0.6085, q: 0.6085, r: 0.4118, s: 0.5515, t: 0.4113, u: 0.586,
+  v: 0.5835, w: 0.923, x: 0.6212, y: 0.5833, z: 0.5335,
+  '{': 0.374, '|': 0.1953, '}': 0.374, '~': 0.5905,
+  'à': 0.5935, 'è': 0.584, 'é': 0.584, 'ì': 0.2235, 'ò': 0.597, 'ù': 0.586,
+  '’': 0.2542,
+};
+// For characters not in the table (rare); roughly a lowercase letter.
+const FALLBACK_ADVANCE = 0.6;
+
+// Font size in SVG user units. Arbitrary, since the viewBox scales to the
+// container; it just sets the scale the widths are computed at.
+const FONT_SIZE = 100;
 // Vertical-only stretch applied to the glyphs (1 = none). Keep it subtle.
 const STRETCH_Y = 1.05;
 
@@ -25,9 +53,10 @@ const STRETCH_Y = 1.05;
  * free). An earlier version used `textLength` to force the fit without any
  * measuring, but Chrome and WebKit ignore textLength when the text is split
  * into per-letter tspans (which click-to-erase needs), so long lines rendered
- * at natural width and were clipped by the viewBox. Instead the real width is
- * measured with getComputedTextLength in a layout effect and fed back into the
- * viewBox; until then (and in the server HTML) a per-letter estimate is used.
+ * at natural width and were clipped by the viewBox. Instead the width is
+ * summed from ADVANCES for the server HTML and first paint, then confirmed
+ * with getComputedTextLength in a layout effect (kerning and cross-browser
+ * shaping differences make the sum fractionally wide).
  * Clicking a letter erases it: it turns transparent and stops catching pointer
  * events, so anything layered beneath (e.g. the home page nav) becomes
  * clickable through the gap. Unclicked glyphs opt back in via visiblePainted,
@@ -39,14 +68,14 @@ export default function FluidText({ text, tag: Tag = 'div' }: FluidTextProps) {
   const textRef = useRef<SVGTextElement>(null);
 
   const letters = Array.from(text);
-  const n = Math.max(letters.length, 1);
 
-  // Fixed font size from the estimate; the measurement adjusts the viewBox,
-  // not the font size, so the text element never has to re-render.
-  const fontSize = EST_W / (n * AVG_ADVANCE);
-  const viewH = fontSize * STRETCH_Y;
-  const baseline = fontSize * 0.78;
-  const viewW = measuredW ?? EST_W;
+  const estimatedW = letters.reduce(
+    (w, char) => w + (ADVANCES[char] ?? FALLBACK_ADVANCE) * FONT_SIZE,
+    0,
+  );
+  const viewH = FONT_SIZE * STRETCH_Y;
+  const baseline = FONT_SIZE * 0.78;
+  const viewW = measuredW ?? estimatedW;
 
   useLayoutEffect(() => {
     const measure = () => {
@@ -75,7 +104,7 @@ export default function FluidText({ text, tag: Tag = 'div' }: FluidTextProps) {
           x="0"
           y={baseline}
           transform={`scale(1 ${STRETCH_Y})`}
-          fontSize={fontSize}
+          fontSize={FONT_SIZE}
           xmlSpace="preserve"
           className="font-nohemi font-bold"
         >

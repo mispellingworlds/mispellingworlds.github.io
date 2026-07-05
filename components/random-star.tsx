@@ -8,6 +8,19 @@ import { useEffect, useState } from 'react';
 const STAR_CHARS =
   '!#$%&()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}';
 
+const STAR_ID = 'random-star';
+
+// Runs inline while the HTML streams in, so the star is already picked at
+// first paint instead of waiting for the bundle to download and hydrate. The
+// page is statically exported, so the pick can't happen at render time (a
+// render-time Math.random() would mismatch the prerendered HTML) — the
+// prerendered span is empty and this fills it pre-paint.
+const PICK_SCRIPT = `(function () {
+  var s = document.getElementById(${JSON.stringify(STAR_ID)});
+  var c = ${JSON.stringify(STAR_CHARS)};
+  if (s && !s.textContent) s.textContent = c[Math.floor(Math.random() * c.length)];
+})();`;
+
 // Always returns a char different from `prev`, so a click visibly changes.
 function pickStar(prev: string): string {
   let next = prev;
@@ -18,21 +31,32 @@ function pickStar(prev: string): string {
 }
 
 export default function RandomStar() {
-  // Picked in an effect, not during render: the page is statically exported,
-  // so a render-time Math.random() would mismatch the prerendered HTML.
-  const [char, setChar] = useState('');
+  // On the server this is '' (matching the empty prerendered span); during
+  // hydration the initializer reads back whatever PICK_SCRIPT already put in
+  // the DOM, so React adopts the pre-paint pick instead of clobbering it.
+  const [char, setChar] = useState(() =>
+    typeof document === 'undefined'
+      ? ''
+      : document.getElementById(STAR_ID)?.textContent ?? '',
+  );
 
+  // Fallback for the rare case the inline script didn't run (e.g. blocked).
   useEffect(() => {
-    setChar(pickStar(''));
+    setChar((prev) => (prev === '' ? pickStar('') : prev));
   }, []);
 
   return (
-    <span
-      aria-hidden
-      onClick={() => setChar(pickStar(char))}
-      className="cursor-pointer select-none font-stars text-[22vh] leading-none text-ink md:text-[36vh]"
-    >
-      {char}
-    </span>
+    <>
+      <span
+        id={STAR_ID}
+        aria-hidden
+        suppressHydrationWarning
+        onClick={() => setChar(pickStar(char))}
+        className="cursor-pointer select-none font-stars text-[22vh] leading-none text-ink md:text-[36vh]"
+      >
+        {char}
+      </span>
+      <script dangerouslySetInnerHTML={{ __html: PICK_SCRIPT }} />
+    </>
   );
 }
