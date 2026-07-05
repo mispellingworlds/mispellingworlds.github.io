@@ -35,12 +35,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        <nav className="absolute inset-x-0 bottom-0 flex translate-y-[90px] flex-row justify-center gap-8 md:gap-14">
+        <nav className="absolute inset-x-0 bottom-0 flex translate-y-[90px] flex-row flex-wrap justify-center gap-x-4 gap-y-0 px-2 md:gap-14 md:px-0">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-cursive text-[2rem] lowercase text-ink no-underline md:text-[4rem]"
+              className="font-cursive text-[1.6rem] lowercase text-ink no-underline md:text-[4rem]"
             >
               {item.label}
             </Link>

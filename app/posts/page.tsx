@@ -28,14 +28,16 @@ export default function PostsPage() {
               <span className="relative">
                 <Link
                   href={`/posts/${post.slug}`}
-                  className="relative z-10 text-[2rem] font-bold text-ink no-underline md:text-[2rem]"
+                  className="relative z-10 text-[1.5rem] font-bold text-ink no-underline md:text-[2rem]"
                 >
                   {post.frontmatter.title}
                 </Link>
-                {/* Absolutely positioned off the title's right edge: takes no
-                    layout space, so the date's size never affects the list's
-                    vertical rhythm and it may overlap neighbours. */}
-                <span className="absolute left-full top-[80%] ml-4 -translate-y-1/2 whitespace-nowrap font-cursive text-[1.8rem] italic leading-none text-ink md:top-1/2 md:text-[2.5rem]">
+                {/* On md+ the date is absolutely positioned off the title's
+                    right edge: takes no layout space, so its size never affects
+                    the list's vertical rhythm and it may overlap neighbours.
+                    On mobile that would push it off-screen (widening the iOS
+                    layout viewport), so it flows inline after the title. */}
+                <span className="ml-3 whitespace-nowrap font-cursive text-[1.4rem] italic leading-none text-ink md:absolute md:left-full md:top-1/2 md:ml-4 md:-translate-y-1/2 md:text-[2.5rem]">
                   {formatDate(post.frontmatter.pubDate)}
                 </span>
               </span>

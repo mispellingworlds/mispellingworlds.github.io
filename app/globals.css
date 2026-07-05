@@ -45,6 +45,12 @@
     color-scheme: light;
     forced-color-adjust: none;
     scrollbar-gutter: stable;
+    /* Anything poking past the right edge makes iOS WebKit widen the layout
+       viewport, which breaks every 100%-width element (the FluidText titles).
+       Clip horizontal overflow instead. `clip` avoids creating a scroll
+       container; `hidden` is the fallback for older browsers. */
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
@@ -72,6 +78,17 @@
     .text-content {
       @apply w-[95%] max-w-[95%] text-[1.2rem];
     }
+  }
+
+  /* Before The Rain has hairline swashes that ClearType's subpixel
+     antialiasing fringes with red/blue on Windows. will-change promotes the
+     text to its own GPU layer, which rasterizes with smooth grayscale
+     antialiasing instead (macOS/iOS already antialias everything).
+     will-change rather than a transform so Tailwind translate utilities on
+     the same elements keep working. */
+  .font-cursive {
+    text-rendering: optimizeLegibility;
+    will-change: transform;
   }
 
   /* Post images are clickable (open the lightbox). */
