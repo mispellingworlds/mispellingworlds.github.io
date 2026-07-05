@@ -49,7 +49,7 @@ export default function HomePage() {
       </div>
 
       {/* Fixed height so the layout doesn't shift while the star picks itself
-          after hydration. */}
+          after hydration.  */}
       <div className="flex h-[26vh] w-full flex-none items-center justify-center md:h-[40vh]">
         <RandomStar />
       </div>
