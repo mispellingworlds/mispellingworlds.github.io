@@ -4,11 +4,11 @@ import './globals.css';
 
 // Fonts needed above the fold — preloaded to avoid the HTML → CSS → font
 // request waterfall (and the fallback-font flash). Nohemi powers the titles,
-// GoogleSansFlex the body, Before The Rain the nav and "home" links.
+// GoogleSansFlex the body. Before The Rain (nav and "home" links) isn't here:
+// it's embedded as a data URI in globals.css, so there's nothing to fetch.
 const PRELOAD_FONTS = [
   { href: '/fonts/Nohemi-Medium.woff2', type: 'font/woff2' },
   { href: '/fonts/GoogleSansFlex.woff2', type: 'font/woff2' },
-  { href: '/fonts/BeforeTheRain.woff2', type: 'font/woff2' },
 ];
 
 export const metadata: Metadata = {
