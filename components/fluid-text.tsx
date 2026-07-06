@@ -119,6 +119,15 @@ export default function FluidText({ text, tag: Tag = 'div' }: FluidTextProps) {
         viewBox={`0 0 ${viewW} ${viewH}`}
         preserveAspectRatio="xMidYMid meet"
         className="block w-full"
+        // The element's aspect ratio stays pinned to the server-side estimate
+        // even after the real width is measured, so the svg never changes
+        // height post-hydration. A height change here moves everything below
+        // (nav, cursive links), and iOS WebKit repaints moved text without
+        // invalidating the ink that overflows the line boxes — the cursive
+        // swashes end up sliced into shifted bands. The measured width only
+        // rescales the glyphs inside the fixed box via the viewBox (≲1%,
+        // imperceptible).
+        style={{ aspectRatio: `${estimatedW} / ${viewH}` }}
       >
         <text
           ref={textRef}
