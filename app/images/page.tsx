@@ -19,32 +19,32 @@ export default function ImagesPage() {
       </div>
 
       <div className="text-content">
-        <ul className="list-disc pl-6 marker:text-ink">
-          <li>
-            <Link
-              href="/drawings"
-              className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
-            >
-              drawings
-            </Link>
-          </li>
-          axiomatic doodling, b/w pointillism, emotional formalism. scanned from
-          my 12,7 x 8,6 cm notebook.
-        </ul>
+        <div className="text-center">
+          <Link
+            href="/drawings"
+            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
+          >
+            drawings
+          </Link>
+          <p>
+            axiomatic doodling, b/w pointillism, emotional formalism. scanned from
+            my 12,7 x 8,6 cm notebook.
+          </p>
+        </div>
 
-        <ul className="mt-12 list-disc pl-6 marker:text-ink">
-          <li>
-            <Link
-              href="/screenshots"
-              className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
-            >
-              screenshots
-            </Link>
-          </li>
-          taking a screenshot is the 2D equivalent of shooting a camera. it can
-          be seen as a way to capture peculiarities, crystallize memories and
-          give images new meaning.
-        </ul>
+        <div className="mt-12 text-center">
+          <Link
+            href="/screenshots"
+            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
+          >
+            screenshots
+          </Link>
+          <p>
+            taking a screenshot is the 2D equivalent of shooting a camera. it can
+            be seen as a way to capture peculiarities, crystallize memories and
+            give images new meaning.
+          </p>
+        </div>
       </div>
 
       <HomeLink />

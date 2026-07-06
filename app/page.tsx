@@ -43,7 +43,7 @@ export default function HomePage() {
             <Link
               key={item.href}
               href={item.href}
-              className="font-cursive text-[1.6rem] lowercase text-ink no-underline md:text-[4rem]"
+              className="font-cursive text-[1.8rem] lowercase text-ink no-underline md:text-[4rem]"
             >
               {item.label}
             </Link>

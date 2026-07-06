@@ -76,9 +76,18 @@
     @apply w-full flex-none p-[1%];
   }
 
-  /* The reading column used by posts and text pages. */
+  /* The reading column used by posts and text pages. Typeset like a book
+     page: justified with hyphenation and a compact ~65ch measure. Hyphens
+     use the html lang (it) patterns. */
   .text-content {
-    @apply mx-auto w-4/5 max-w-[80ch] p-4 font-google text-[1.5rem] leading-[1.3];
+    @apply mx-auto w-4/5 max-w-[65ch] p-4 text-justify font-google text-[1.5rem] leading-[1.3];
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  /* Paragraphs get a full blank line between them, like a normal document. */
+  .text-content p + p {
+    margin-top: 1.3em;
   }
 
   @media (max-width: 768px) {

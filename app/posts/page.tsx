@@ -22,25 +22,18 @@ export default function PostsPage() {
       </div>
 
       <div className="text-content">
-        <ul className="list-disc pl-6 marker:text-ink">
+        <ul className="flex flex-col items-center gap-10 text-center">
           {posts.map((post) => (
-            <li key={post.slug}>
-              <span className="relative">
-                <Link
-                  href={`/posts/${post.slug}`}
-                  className="relative z-10 text-[1.5rem] font-bold text-ink no-underline md:text-[2rem]"
-                >
-                  {post.frontmatter.title}
-                </Link>
-                {/* On md+ the date is absolutely positioned off the title's
-                    right edge: takes no layout space, so its size never affects
-                    the list's vertical rhythm and it may overlap neighbours.
-                    On mobile that would push it off-screen (widening the iOS
-                    layout viewport), so it flows inline after the title. */}
-                <span className="ml-3 whitespace-nowrap font-cursive text-[2rem] italic leading-none text-ink md:absolute md:left-full md:top-1/2 md:ml-4 md:-translate-y-1/2 md:text-[2.5rem]">
-                  {formatDate(post.frontmatter.pubDate)}
-                </span>
+            <li key={post.slug} className="flex flex-col items-center gap-0">
+              <span className="font-cursive text-[2rem] italic leading-none text-ink md:text-[2.5rem]">
+                {formatDate(post.frontmatter.pubDate)}
               </span>
+              <Link
+                href={`/posts/${post.slug}`}
+                className="-mt-1 text-[1.5rem] font-bold text-ink no-underline md:text-[2rem]"
+              >
+                {post.frontmatter.title}
+              </Link>
             </li>
           ))}
         </ul>
