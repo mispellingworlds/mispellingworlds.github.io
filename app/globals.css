@@ -10,11 +10,15 @@
 
 @font-face {
   /* Named CursiveDisplay, not "Cursive", because `cursive` is a CSS generic
-     keyword — an unquoted "Cursive" in a font stack would resolve to it. */
+     keyword — an unquoted "Cursive" in a font stack would resolve to it.
+     display: block, not swap — the swashes overflow the layout box, and on a
+     swap iOS WebKit only repaints inside the box, leaving glitched half-drawn
+     strokes on fresh loads/reloads. The font is preloaded and small, so the
+     brief block period is invisible in practice. */
   font-family: 'CursiveDisplay';
   src: url('/fonts/BeforeTheRain.woff2') format('woff2');
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
