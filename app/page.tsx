@@ -35,7 +35,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        <nav className="absolute inset-x-0 bottom-0 flex translate-y-[90px] flex-row flex-wrap justify-center gap-x-4 gap-y-0 px-2 md:gap-14 md:px-0">
+        {/* Positioned with bottom, not translate-y: a transform makes iOS
+            rasterize the nav on a compositing layer, which mangles the cursive
+            swashes (see the .font-cursive note in globals.css). */}
+        <nav className="absolute inset-x-0 -bottom-[90px] flex flex-row flex-wrap justify-center gap-x-4 gap-y-0 px-2 md:gap-14 md:px-0">
           {NAV.map((item) => (
             <Link
               key={item.href}

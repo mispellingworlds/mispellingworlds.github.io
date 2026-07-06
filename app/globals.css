@@ -85,8 +85,11 @@
      element's layout box, and Before The Rain's swashes overflow that box by
      design, so they get clipped. ClearType fringing on Windows is the lesser
      evil; macOS/iOS antialias everything anyway. */
+  /* No text-rendering: optimizeLegibility here — kerning and ligatures are
+     already on by default in modern browsers, and optimizeLegibility triggers
+     garbled/overlapping glyph rendering on iOS WebKit with this font. */
   .font-cursive {
-    text-rendering: optimizeLegibility;
+    font-synthesis: none;
   }
 
   /* Post images are clickable (open the lightbox). */

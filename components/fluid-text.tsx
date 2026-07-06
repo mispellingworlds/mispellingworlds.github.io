@@ -61,10 +61,18 @@ const STRETCH_Y = 1.05;
  * events, so anything layered beneath (e.g. the home page nav) becomes
  * clickable through the gap. Unclicked glyphs opt back in via visiblePainted,
  * so a parent can be pointer-events-none without disabling them.
+ * WebKit only applies pointer-events at the <text> level, never on tspans, so
+ * on iOS the tspans can't opt out of the parent's pointer-events-none and taps
+ * do nothing. Each unerased letter therefore also gets an invisible <rect>
+ * over its glyph cell (measured via getExtentOfChar once the font is in) —
+ * rects are real graphics elements that every engine hit-tests individually.
  */
 export default function FluidText({ text, tag: Tag = 'div' }: FluidTextProps) {
   const [clicked, setClicked] = useState<ReadonlySet<number>>(() => new Set());
   const [measuredW, setMeasuredW] = useState<number | null>(null);
+  const [extents, setExtents] = useState<
+    readonly { x: number; y: number; width: number; height: number }[] | null
+  >(null);
   const textRef = useRef<SVGTextElement>(null);
 
   const letters = Array.from(text);
@@ -79,8 +87,21 @@ export default function FluidText({ text, tag: Tag = 'div' }: FluidTextProps) {
 
   useLayoutEffect(() => {
     const measure = () => {
-      const w = textRef.current?.getComputedTextLength() ?? 0;
+      const el = textRef.current;
+      if (!el) return;
+      const w = el.getComputedTextLength();
       if (w > 0) setMeasuredW(w);
+      try {
+        const n = el.getNumberOfChars();
+        setExtents(
+          Array.from({ length: n }, (_, i) => {
+            const r = el.getExtentOfChar(i);
+            return { x: r.x, y: r.y, width: r.width, height: r.height };
+          }),
+        );
+      } catch {
+        // Hit-testing falls back to the tspans (fine outside WebKit).
+      }
     };
     measure();
     // The first measurement may have hit the fallback font; measure again once
@@ -120,6 +141,29 @@ export default function FluidText({ text, tag: Tag = 'div' }: FluidTextProps) {
             </tspan>
           ))}
         </text>
+        {extents && (
+          // Same transform as the text so the extents (reported in the text's
+          // pre-transform user space) line up with the drawn glyphs.
+          <g transform={`scale(1 ${STRETCH_Y})`}>
+            {extents.map((r, i) =>
+              // No rect over erased letters (the gap stays click-through) or
+              // spaces (nothing painted there to erase).
+              clicked.has(i) || letters[i] === ' ' ? null : (
+                <rect
+                  key={i}
+                  x={r.x}
+                  y={r.y}
+                  width={r.width}
+                  height={r.height}
+                  fill="transparent"
+                  style={{ pointerEvents: 'all' }}
+                  className="cursor-pointer"
+                  onClick={() => setClicked((prev) => new Set(prev).add(i))}
+                />
+              ),
+            )}
+          </g>
+        )}
       </svg>
     </Tag>
   );

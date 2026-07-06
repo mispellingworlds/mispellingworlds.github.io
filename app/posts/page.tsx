@@ -37,7 +37,7 @@ export default function PostsPage() {
                     the list's vertical rhythm and it may overlap neighbours.
                     On mobile that would push it off-screen (widening the iOS
                     layout viewport), so it flows inline after the title. */}
-                <span className="ml-3 whitespace-nowrap font-cursive text-[1.4rem] italic leading-none text-ink md:absolute md:left-full md:top-1/2 md:ml-4 md:-translate-y-1/2 md:text-[2.5rem]">
+                <span className="ml-3 whitespace-nowrap font-cursive text-[2rem] italic leading-none text-ink md:absolute md:left-full md:top-1/2 md:ml-4 md:-translate-y-1/2 md:text-[2.5rem]">
                   {formatDate(post.frontmatter.pubDate)}
                 </span>
               </span>
