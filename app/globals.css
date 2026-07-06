@@ -84,7 +84,7 @@
     }
   }
 
-  /* NOTE: don't force GPU-layer rasterization here (will-change/transform)
+  /* NOTE:  don't force GPU-layer rasterization here (will-change/transform)
      to get grayscale antialiasing — the compositing layer is sized to the
      element's layout box, and Before The Rain's swashes overflow that box by
      design, so they get clipped. ClearType fringing on Windows is the lesser
