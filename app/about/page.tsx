@@ -24,6 +24,7 @@ export default function AboutPage() {
         capable of engaging with the sparkling secrets; conscious that the
         circuit-woven wombs of these times are brooding possibilities never seen
         before.
+        {/* eslint-disable-next-line @next/next/no-img-element */}
       </div>
 
       <HomeLink />

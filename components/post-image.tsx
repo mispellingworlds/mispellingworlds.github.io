@@ -22,6 +22,8 @@ export default function PostImage({
     <img
       src={src}
       alt={alt}
+      loading="lazy"
+      decoding="async"
       className="post-image mx-auto my-10 block h-auto first:mt-0 md:my-10"
       style={
         {

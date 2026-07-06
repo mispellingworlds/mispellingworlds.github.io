@@ -19,28 +19,37 @@ export default function OtherPage() {
       </div>
 
       <div className="text-content">
-        <ul className="list-disc pl-6 marker:text-ink">
-          <li>
-            <Link href="/inspiration" className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]">
-              inspirations
-            </Link>
-          </li>
-          <li>
-            <a
-              href="https://cartografia.bandcamp.com/music"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
-            >
-              bandcamp
-            </a>
-          </li>
-          <li>
-            <Link href="/contact" className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]">
-              contact me
-            </Link>
-          </li>
-        </ul>
+        <div className="text-center">
+          <Link
+            href="/inspiration"
+            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
+          >
+            inspirations
+          </Link>
+          <p></p>
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="https://cartografia.bandcamp.com/music"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
+          >
+            bandcamp
+          </a>
+          <p></p>
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/contact"
+            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
+          >
+            contact me
+          </Link>
+          <p></p>
+        </div>
       </div>
 
       <HomeLink />

@@ -29,21 +29,18 @@ export default function InspirationPage() {
         </div>
       </div>
 
-      <div className="text-content">
-        <ul className="list-disc pl-6 marker:text-ink">
-          {LINKS.map((link) => (
-            <li key={link.url}>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
-              >
-                {link.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="text-content flex flex-col items-center gap-24 text-center">
+        {LINKS.map((link) => (
+          <a
+            key={link.url}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
+          >
+            {link.title}
+          </a>
+        ))}
       </div>
 
       <HomeLink />

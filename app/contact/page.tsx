@@ -12,8 +12,19 @@ const codes = Array.from(EMAIL)
 export default function ContactPage() {
   return (
     <div className="master-stack">
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="text-section">
         <ObfuscatedEmail codes={codes} />
+      </div>
+
+      <div className="flex flex-1 items-center justify-center p-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/jesterbw.webp"
+          alt="jester"
+          loading="lazy"
+          decoding="async"
+          className="max-h-[50vh] w-auto max-w-full object-contain"
+        />
       </div>
 
       <HomeLink />

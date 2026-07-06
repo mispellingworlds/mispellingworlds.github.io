@@ -25,7 +25,7 @@ export default function PostsPage() {
         <ul className="flex flex-col items-center gap-10 text-center">
           {posts.map((post) => (
             <li key={post.slug} className="flex flex-col items-center gap-0">
-              <span className="font-cursive text-[2rem] italic leading-none text-ink md:text-[2.5rem]">
+              <span className="pointer-events-none select-none font-cursive text-[2rem] italic leading-none text-ink md:text-[2.5rem]">
                 {formatDate(post.frontmatter.pubDate)}
               </span>
               <Link
