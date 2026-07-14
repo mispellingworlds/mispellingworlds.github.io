@@ -25,10 +25,12 @@ export default function InspirationPage() {
           />
         </div>
         <div className="flex flex-col gap-2 md:hidden">
-          <FluidText text="inspirations" tag="h1" />
+          <FluidText text="ive got a portal in my" tag="h1" />
+          <FluidText text="portable computer     " tag="h1" />
         </div>
+        
       </div>
-
+      <br></br>
       <div className="text-content flex flex-col items-center gap-24 text-center leading-none">
         {LINKS.map((link) => (
           <span key={link.url} className="relative inline-block">
