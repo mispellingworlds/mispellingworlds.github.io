@@ -26,7 +26,7 @@ export default function OtherPage() {
           >
             inspirations
           </Link>
-          <p></p>
+          <p>unique/oblique visions, sources of creativity, resonant world-views.</p>
         </div>
 
         <div className="mt-12 text-center">
@@ -38,7 +38,7 @@ export default function OtherPage() {
           >
             bandcamp
           </a>
-          <p></p>
+          <p>audio-image materializations.</p>
         </div>
 
         <div className="mt-12 text-center">
@@ -48,7 +48,7 @@ export default function OtherPage() {
           >
             contact me
           </Link>
-          <p></p>
+          <p>@ my email address.</p>
         </div>
       </div>
 

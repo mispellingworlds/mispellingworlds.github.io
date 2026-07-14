@@ -20,7 +20,7 @@ export default function InspirationPage() {
       <div className="text-section">
         <div className="hidden md:block">
           <FluidText
-            text="inspirations"
+            text="ive got a portal in my portable computer"
             tag="h1"
           />
         </div>
@@ -29,17 +29,30 @@ export default function InspirationPage() {
         </div>
       </div>
 
-      <div className="text-content flex flex-col items-center gap-24 text-center">
+      <div className="text-content flex flex-col items-center gap-24 text-center leading-none">
         {LINKS.map((link) => (
-          <a
-            key={link.url}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
-          >
-            {link.title}
-          </a>
+          <span key={link.url} className="relative inline-block">
+            {/* A larger cursive echo of the title, centred behind the link.
+                Purely decorative: aria-hidden keeps it out of the accessibility
+                tree (the real link already announces the name), and
+                pointer-events-none / select-none mean clicks and drag-selection
+                pass straight through to the link on top. whitespace-nowrap lets
+                it overflow the link's box symmetrically instead of wrapping. */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-10 select-none whitespace-nowrap font-cursive text-[2rem] leading-none text-grey-meta md:text-[3rem]"
+            >
+              {link.title}
+            </span>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 font-nohemi text-[2.1rem] font-bold text-ink no-underline md:text-[2.8rem]"
+            >
+              {link.title}
+            </a>
+          </span>
         ))}
       </div>
 
