@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
+import Inscription from '@/components/inscription';
 import PostImage from '@/components/post-image';
 import Vimeo from '@/components/vimeo';
 
@@ -6,6 +7,7 @@ import Vimeo from '@/components/vimeo';
 // file without an explicit import — that's how posts use <PostImage> / <Vimeo>.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
+    Inscription,
     PostImage,
     Vimeo,
     ...components,
