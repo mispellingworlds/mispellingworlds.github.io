@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import FluidText from '@/components/fluid-text';
 import HomeLink from '@/components/home-link';
 
-export const metadata: Metadata = { title: 'Inspirations' };
+export const metadata: Metadata = {
+  title: 'inspirations',
+  description: 'unique/oblique visions, sources of creativity, resonant world-views.',
+  alternates: { canonical: '/inspiration/' },
+};
 
 const LINKS = [
   { url: 'https://waiting-all-my.life/', title: '7038634357' },

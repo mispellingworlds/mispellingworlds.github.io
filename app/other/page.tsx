@@ -3,7 +3,11 @@ import Link from 'next/link';
 import FluidText from '@/components/fluid-text';
 import HomeLink from '@/components/home-link';
 
-export const metadata: Metadata = { title: 'Other' };
+export const metadata: Metadata = {
+  title: 'other',
+  description: 'inspirations, music on bandcamp, and how to get in touch.',
+  alternates: { canonical: '/other/' },
+};
 
 export default function OtherPage() {
   return (

@@ -4,7 +4,11 @@ import FluidText from '@/components/fluid-text';
 import HomeLink from '@/components/home-link';
 import { formatDate, getAllPosts } from '@/lib/posts';
 
-export const metadata: Metadata = { title: 'Posts' };
+export const metadata: Metadata = {
+  title: 'posts',
+  description: 'thoughts at one moment in time: essays on videogames, music, film and art.',
+  alternates: { canonical: '/posts/' },
+};
 
 export default function PostsPage() {
   const posts = getAllPosts();

@@ -2,7 +2,12 @@ import type { Metadata } from 'next';
 import FluidText from '@/components/fluid-text';
 import HomeLink from '@/components/home-link';
 
-export const metadata: Metadata = { title: 'About' };
+export const metadata: Metadata = {
+  title: 'about',
+  description:
+    'everything is interesting, or has the possibility of being interesting: a newfound digital psychedelia born from the ashes of overcrowded online spaces.',
+  alternates: { canonical: '/about/' },
+};
 
 export default function AboutPage() {
   return (

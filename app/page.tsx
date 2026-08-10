@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import ReactDOM from 'react-dom';
 import FluidText from '@/components/fluid-text';
 import RandomStar from '@/components/random-star';
+
+export const metadata: Metadata = {
+  description:
+    'a personal space for making: posts on videogames, music and art, drawings, screenshots, and other fragments of digital psychedelia.',
+  alternates: { canonical: '/' },
+};
 
 const NAV = [
   { href: '/posts', label: 'Posts' },

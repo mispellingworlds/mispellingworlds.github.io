@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://cartografia.xyz'),
   title: {
     default: 'cartografia',
-    template: '%s — cartografia',
+    // Page titles stand on their own — no "— cartografia" suffix.
+    template: '%s',
   },
   icons: {
     icon: [
@@ -45,7 +46,7 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="it">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

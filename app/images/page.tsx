@@ -3,7 +3,11 @@ import Link from 'next/link';
 import FluidText from '@/components/fluid-text';
 import HomeLink from '@/components/home-link';
 
-export const metadata: Metadata = { title: 'Images' };
+export const metadata: Metadata = {
+  title: 'images',
+  description: 'drawings scanned from a small notebook and screenshots that crystallize memories.',
+  alternates: { canonical: '/images/' },
+};
 
 export default function ImagesPage() {
   return (

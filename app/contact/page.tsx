@@ -2,7 +2,11 @@ import type { Metadata } from 'next';
 import ObfuscatedEmail from '@/components/obfuscated-email';
 import HomeLink from '@/components/home-link';
 
-export const metadata: Metadata = { title: 'Contact' };
+export const metadata: Metadata = {
+  title: 'contact',
+  description: 'how to reach me by email.',
+  alternates: { canonical: '/contact/' },
+};
 
 const EMAIL = 'mispellingworlds@gmail.com';
 const codes = Array.from(EMAIL)

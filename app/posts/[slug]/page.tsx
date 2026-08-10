@@ -17,7 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const { frontmatter } = getPostSource(slug);
-    return { title: frontmatter.title, description: frontmatter.description };
+    return {
+      title: frontmatter.title.toLowerCase(),
+      description: frontmatter.description,
+      alternates: { canonical: `/posts/${slug}/` },
+    };
   } catch {
     return {};
   }
