@@ -5,7 +5,7 @@ import HomeLink from '@/components/home-link';
 
 export const metadata: Metadata = {
   title: 'images',
-  description: 'drawings scanned from a small notebook and screenshots that crystallize memories.',
+  description: 'i want to become an image in your mind.',
   alternates: { canonical: '/images/' },
 };
 

@@ -6,7 +6,7 @@ import RandomStar from '@/components/random-star';
 
 export const metadata: Metadata = {
   description:
-    'a personal space for making: posts on videogames, music and art, drawings, screenshots, and other fragments of digital psychedelia.',
+    'ive wasted 2 much time so now im making space',
   alternates: { canonical: '/' },
 };
 

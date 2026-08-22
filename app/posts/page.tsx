@@ -6,7 +6,7 @@ import { formatDate, getAllPosts } from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: 'posts',
-  description: 'thoughts at one moment in time: essays on videogames, music, film and art.',
+  description: 'ive thought about this at one moment in time',
   alternates: { canonical: '/posts/' },
 };
 

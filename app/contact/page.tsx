@@ -4,7 +4,7 @@ import HomeLink from '@/components/home-link';
 
 export const metadata: Metadata = {
   title: 'contact',
-  description: 'how to reach me by email.',
+  description: 'email.',
   alternates: { canonical: '/contact/' },
 };
 
