@@ -63,6 +63,14 @@
   body {
     -webkit-font-smoothing: antialiased;
   }
+
+  /* Citation markers link to the reference list at the foot of the page;
+     glide there instead of teleporting, unless the reader asked not to. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 }
 
 @layer components {
@@ -111,6 +119,21 @@
   /* Post images are clickable (open the lightbox). */
   .text-content img {
     @apply cursor-pointer;
+  }
+
+  /* A reference entry jumped to from a [1] marker fades its number/link band
+     in for a moment so the reader can see where they landed. */
+  .reference-item:target {
+    animation: reference-flash 1.6s ease-out;
+  }
+
+  @keyframes reference-flash {
+    from {
+      background-color: rgba(183, 183, 183, 0.35);
+    }
+    to {
+      background-color: transparent;
+    }
   }
 
   /* PostImage responsive width: swap to the mobile width below 768px. */
