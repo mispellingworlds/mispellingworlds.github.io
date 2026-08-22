@@ -6,6 +6,10 @@ node_modules/
 out/
 next-env.d.ts
 
+# generated image derivatives + their manifest (npm run images)
+public/_img/
+.image-manifest.json
+
 # logs
 npm-debug.log*
 yarn-debug.log*

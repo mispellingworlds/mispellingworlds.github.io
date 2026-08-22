@@ -25,7 +25,8 @@ export default function ContactPage() {
         <img
           src="/jesterbw.webp"
           alt="jester"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           decoding="async"
           className="max-h-[50vh] w-auto max-w-full object-contain"
         />

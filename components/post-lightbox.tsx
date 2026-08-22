@@ -26,8 +26,19 @@ export default function PostLightbox({ children }: { children: React.ReactNode }
         onClick={(e) => {
           const target = e.target as HTMLElement;
           if (target.tagName === 'IMG') {
-            setActive((target as HTMLImageElement).src);
+            const img = target as HTMLImageElement;
+            // PostImage stashes the largest derivative here; `src` is whichever
+            // srcset rung the browser picked, which can be far too small.
+            setActive(img.dataset.full ?? img.src);
           }
+        }}
+        // Fetch the full-size file while the pointer is still on the image, so
+        // the overlay usually opens on an already-cached bitmap.
+        onPointerOver={(e) => {
+          const target = e.target as HTMLElement;
+          if (target.tagName !== 'IMG') return;
+          const full = (target as HTMLImageElement).dataset.full;
+          if (full) new Image().src = full;
         }}
       >
         {children}
@@ -42,6 +53,7 @@ export default function PostLightbox({ children }: { children: React.ReactNode }
           <img
             src={active}
             alt="full view"
+            decoding="async"
             className="max-h-[95vh] max-w-[95vw] object-contain"
           />
         </div>
