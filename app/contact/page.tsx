@@ -4,7 +4,7 @@ import HomeLink from '@/components/home-link';
 
 export const metadata: Metadata = {
   title: 'contact',
-  description: 'email.',
+  description: 'email me',
   alternates: { canonical: '/contact/' },
 };
 
@@ -25,8 +25,7 @@ export default function ContactPage() {
         <img
           src="/jesterbw.webp"
           alt="jester"
-          loading="eager"
-          fetchPriority="high"
+          loading="lazy"
           decoding="async"
           className="max-h-[50vh] w-auto max-w-full object-contain"
         />

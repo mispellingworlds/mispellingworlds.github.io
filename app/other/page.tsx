@@ -5,7 +5,7 @@ import HomeLink from '@/components/home-link';
 
 export const metadata: Metadata = {
   title: 'other',
-  description: 'inspirations, music on bandcamp, and how to get in touch.',
+  description: 'other.',
   alternates: { canonical: '/other/' },
 };
 
