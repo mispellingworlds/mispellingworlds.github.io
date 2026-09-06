@@ -16,6 +16,7 @@ const LINKS = [
   { url: 'https://www.instagram.com/tulpess/', title: 'Tulpess' },
   { url: 'https://x.com/LIL_ICEBUNNY', title: 'James Ferraro' },
   { url: 'https://rothko.nga.gov/', title: 'Mark Rothko' },
+  { url: 'https://teamsachikom.wixsite.com/sachiko-m', title: 'Sachiko M.' },
 ];
 
 export default function InspirationPage() {
