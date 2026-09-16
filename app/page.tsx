@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ReactDOM from 'react-dom';
 import FluidText from '@/components/fluid-text';
+import LatestPostBar from '@/components/latest-post-bar';
 import RandomStar from '@/components/random-star';
 
 export const metadata: Metadata = {
@@ -27,11 +28,11 @@ export default function HomePage() {
   });
 
   return (
-    <div className="master-stack">
+    <div className="master-stack no-scrollbar-gutter">
       {/* The nav hides underneath the title; erase a letter (click it) to
           reach the link behind it. The title layer is pointer-events-none so
           only the still-visible glyphs catch clicks. */}
-      <div className="relative mb-52 md:mb-52">
+      <div className="relative mb-52 md:mb-32">
         <div className="text-section pointer-events-none relative z-10">
           <div className="hidden md:block">
             <FluidText text="ive wasted 2 much time so now im making space" tag="h1" />
@@ -63,6 +64,8 @@ export default function HomePage() {
       <div className="flex h-[26vh] w-full flex-none items-center justify-center md:h-[40vh]">
         <RandomStar />
       </div>
+
+      <LatestPostBar />
     </div>
   );
 }

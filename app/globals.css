@@ -64,6 +64,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* The home page doesn't scroll, and its black latest-post bar has to reach
+     the screen edge: the reserved gutter would leave a white strip beside it. */
+  html:has(.no-scrollbar-gutter) {
+    scrollbar-gutter: auto;
+  }
+
   /* Citation markers link to the reference list at the foot of the page;
      glide there instead of teleporting, unless the reader asked not to. */
   @media (prefers-reduced-motion: no-preference) {
