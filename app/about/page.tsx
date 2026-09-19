@@ -28,7 +28,9 @@ export default function AboutPage() {
         overcrowded online spaces, interested in novel ways of wonder and still
         capable of engaging with the sparkling secrets; conscious that the
         circuit-woven wombs of these times are brooding possibilities never seen
-        before.
+        before. everyone is drawing a cartography of existence thorugh senses 
+        and information, but such maps, contrary to the one reality, can be 
+        designed to be unique and strive for their own beauty.
         {/* eslint-disable-next-line @next/next/no-img-element */}
       </div>
 
