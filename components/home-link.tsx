@@ -14,10 +14,10 @@ export default function HomeLink({ as = 'footer' }: HomeLinkProps) {
     <div className="flex w-full flex-none justify-center pt-12 pb-2">
       <Link
         href="/"
-        // leading-[0.5] halves the layout box so the font's tall ascender and
-        // descender areas overflow visually instead of taking up page height;
-        // relative-bottom lifts the ink back up since the box hugs the page end.
-        className="relative bottom-4 font-cursive text-[2rem] leading-[2] text-ink no-underline md:bottom-8 md:text-[3rem]"
+        // No `relative bottom` lift: it used to pull the ink up out of its
+        // box, which left the word sitting high with empty space under it.
+        // The box is the same either way, so sitting low costs no page height.
+        className="font-cursive text-[2rem] leading-[2] text-ink no-underline md:text-[3rem]"
       >
         home
       </Link>
@@ -29,5 +29,11 @@ export default function HomeLink({ as = 'footer' }: HomeLinkProps) {
     // extra top padding to keep them on screen.
     return <header className="h-[25vh] pt-8 md:pt-12">{link}</header>;
   }
-  return <footer className="mt-auto">{link}</footer>;
+  // overflow-clip: the cursive descenders paint below the line box, and this
+  // box is the last thing on the page — that stray ink counts as scrollable
+  // overflow and puts a scrollbar on pages that otherwise fit exactly one
+  // screen. The old `relative bottom` lift avoided it by pulling the whole
+  // word up; clipping keeps the word where it sits and drops only the sliver
+  // that was already past the bottom edge.
+  return <footer className="mt-auto overflow-clip">{link}</footer>;
 }

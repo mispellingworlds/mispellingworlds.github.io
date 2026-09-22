@@ -22,7 +22,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="text-content">
+      {/* A thick black rectangle boxes the reading column; flex-1 stretches it
+          down from the title to the home link even when the text runs short. */}
+      <div className="text-content mb-6 flex-1 border-[10px] border-ink md:mb-10 md:border-[14px]">
         everything is interesting, or has the possibility of being interesting. i
         believe in a newfound digital psychedelia born from the ashes of
         overcrowded online spaces, interested in novel ways of wonder and still

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import FluidText from '@/components/fluid-text';
 import HomeLink from '@/components/home-link';
+import Rule from '@/components/rule';
 
 export const metadata: Metadata = {
   title: 'images',
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
 
 export default function ImagesPage() {
   return (
-    <div className="master-stack">
+    // no-scrollbar-gutter: the page doesn't scroll, and the rules have to
+    // reach the screen edge — the reserved gutter would leave a strip of
+    // white beside them (same reason the home page uses it).
+    <div className="master-stack no-scrollbar-gutter">
       <div className="text-section">
         <div className="hidden md:block">
           <FluidText text="i want to become an image in your mind" tag="h1" />
@@ -22,8 +26,15 @@ export default function ImagesPage() {
         </div>
       </div>
 
-      <div className="text-content">
-        <div className="text-center">
+      {/* Same scaffold as /other: flex-1 + justify-between shares the leftover
+          height between the blocks instead of spending it on fixed margins, so
+          the page ends exactly at the bottom of the viewport. The rules are
+          siblings of the reading columns, not children, so they span the full
+          width while the text stays in its 65ch measure. */}
+      <div className="flex w-full flex-1 flex-col justify-between">
+        <Rule />
+
+        <div className="text-content py-4 text-center">
           <Link
             href="/drawings"
             className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
@@ -36,7 +47,9 @@ export default function ImagesPage() {
           </p>
         </div>
 
-        <div className="mt-12 text-center">
+        <Rule />
+
+        <div className="text-content py-4 text-center">
           <Link
             href="/screenshots"
             className="font-cursive text-[2.1rem] text-ink no-underline md:text-[2.8rem]"
@@ -49,6 +62,8 @@ export default function ImagesPage() {
             give images new meaning.
           </p>
         </div>
+
+        <Rule />
       </div>
 
       <HomeLink />
