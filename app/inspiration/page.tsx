@@ -25,12 +25,12 @@ export default function InspirationPage() {
       <div className="text-section">
         <div className="hidden md:block">
           <FluidText
-            text="ive got a portal in my portable computer"
+            text="ive found a portal in my portable computer"
             tag="h1"
           />
         </div>
         <div className="flex flex-col gap-2 md:hidden">
-          <FluidText text="ive got a portal in my" tag="h1" />
+          <FluidText text="ive found a portal in my" tag="h1" />
           <FluidText text="portable computer     " tag="h1" />
         </div>
         
