@@ -44,7 +44,7 @@ export default function AboutPage() {
                   novel ways of wonder and still capable of engaging with the
                   sparkling secrets; conscious that the circuit-woven wombs of
                   these times are brooding possibilities never seen before. we're 
-                  all drawing cartographies of existence thorugh senses and
+                  all drawing cartographies of existence through senses and
                   information, but these maps - contrary to the one reality -
                   can be designed to be unique, and strive for their own beauty.
                 </div>
