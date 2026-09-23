@@ -6,9 +6,9 @@
  */
 export default function Rule() {
   return (
-    <div role="separator" className="flex w-full items-center gap-[90%]">
-      <span className="h-1 flex-1 bg-ink" />
-      <span className="h-1 flex-1 bg-ink" />
+    <div role="separator" className="flex w-full items-center gap-[8%]">
+      <span className="h-0.5 flex-1 bg-ink" />
+      <span className="h-0.5 flex-1 bg-ink" />
     </div>
   );
 }
