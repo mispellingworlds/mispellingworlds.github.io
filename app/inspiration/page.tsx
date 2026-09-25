@@ -9,14 +9,15 @@ export const metadata: Metadata = {
 };
 
 const LINKS = [
-  { url: 'https://waiting-all-my.life/', title: '7038634357' },
+  { url: 'https://7-0-3.bandcamp.com/', title: '7038634357' },
   { url: 'https://store.steampowered.com/app/650700/Yume_Nikki/', title: 'Yume Nikki' },
-  { url: 'https://www.instagram.com/dg_bladee/', title: 'Bladee' },
+  { url: 'https://www.youtube.com/channel/UC5A2Eyd8Li6PCi8iOJUIViQ', title: 'Bladee' },
   { url: 'https://edglrd.com/', title: 'EDGLRD' },
-  { url: 'https://www.instagram.com/tulpess/', title: 'Tulpess' },
-  { url: 'https://x.com/LIL_ICEBUNNY', title: 'James Ferraro' },
+  { url: 'https://jonrafman.com/', title: 'Jon Rafman' },
+  { url: 'https://letterboxd.com/director/phil-solomon/', title: 'Phil Solomon' },
+  { url: 'https://jjamesferraro.bandcamp.com/music', title: 'James Ferraro' },
   { url: 'https://rothko.nga.gov/', title: 'Mark Rothko' },
-  { url: 'https://teamsachikom.wixsite.com/sachiko-m', title: 'Sachiko M.' },
+  { url: 'https://www.instagram.com/tulpess/', title: 'Tulpess' }
 ];
 
 export default function InspirationPage() {
@@ -31,7 +32,7 @@ export default function InspirationPage() {
         </div>
         <div className="flex flex-col gap-2 md:hidden">
           <FluidText text="ive found a portal in my" tag="h1" />
-          <FluidText text="portable computer     " tag="h1" />
+          <FluidText text="portable computer         " tag="h1" />
         </div>
         
       </div>
